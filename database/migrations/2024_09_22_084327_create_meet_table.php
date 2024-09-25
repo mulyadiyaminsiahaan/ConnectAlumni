@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('meet', function (Blueprint $table) {
             $table->id();
-            $table->integer('alumni_id');
-            $table->integer('user_id');
+            $table->foreignId('alumni_id')->nullable()->index('fk_meet_to_alumni');
+            $table->foreignId('user_id')->nullable()->index('fk_meet_to_user');
             $table->enum('lever', [1, 2, 3]);
             #create table date
             $table->date('date')->nullable();

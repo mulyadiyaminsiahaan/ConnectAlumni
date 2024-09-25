@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('alumni', function (Blueprint $table) {
             $table->id();
-            $table->integer('job_id');
+            $table->foreignId('job_id')->nullable()->index('fk_alumni_to_job');
             $table->string('name');
             $table->string('fee');
             $table->longText('photo')->nullable(); 
