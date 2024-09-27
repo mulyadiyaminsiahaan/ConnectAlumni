@@ -25,7 +25,22 @@ class Role extends Model
    //declare fillable 
    protected $fillable = [
        'title',
+       'created_at',
        'updated_at',
        'deleted_at',
    ];
+
+    //one to many
+    public function role_user()
+    {
+        //2 parameter (path model, field foreign key)
+        return $this->hasMany('App\Models\ManagementAccsess\RoleUser', 'role_id');
+    }
+
+    //one to many
+    public function permission_role()
+    {
+        //2 parameter (path model, field foreign key)
+        return $this->hasMany('App\Models\ManagementAccsess\PermissionRole', 'role_id');
+    }
 }
