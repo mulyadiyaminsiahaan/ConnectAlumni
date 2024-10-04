@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+#tabel tabel aapa ajja yg mau ditambahkan
+
 return new class extends Migration
 {
     /**
