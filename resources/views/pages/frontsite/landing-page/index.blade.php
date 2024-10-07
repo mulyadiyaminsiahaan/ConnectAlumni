@@ -154,11 +154,20 @@
                     <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-10 w-48 h-auto">
                 </div>
         
-                <div class="flex justify-center space-x-6">
-                    <a href="#" class="text-white text-lg font-medium bg-[#3b5998] rounded-full px-6 py-3">Facebook</a>
-                    <a href="#" class="text-white text-lg font-medium bg-[#00acee] rounded-full px-6 py-3">Twitter</a>
-                    <a href="#" class="text-white text-lg font-medium bg-[#E1306C] rounded-full px-6 py-3">Instagram</a>
-                    <a href="#" class="text-white text-lg font-medium bg-[#0e76a8] rounded-full px-6 py-3">LinkedIn</a>
+                <div class="flex justify-center space-x-8 mt-10"> <!-- Added mt-10 for top margin -->
+                    <a href="#">
+                        <img src="{{ asset('/assets/frontsite/images/facebook.svg') }}" alt="Facebook" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="iadelofc@gmail.com">
+                        <img src="{{ asset('/assets/frontsite/images/envelope-at-fill.svg') }}" alt="Email" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="https://www.instagram.com/iadelofc/profilecard/?igsh=bHNoMDQ1eHlrODJz">
+                        <img src="{{ asset('/assets/frontsite/images/instagram.svg') }}" alt="Instagram" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('/assets/frontsite/images/whatsapp.svg') }}" alt="WhatsApp" class="w-8 h-8 mx-4">
+                    </a>
+                </div>
                 </div>
             </div>
         </section>
