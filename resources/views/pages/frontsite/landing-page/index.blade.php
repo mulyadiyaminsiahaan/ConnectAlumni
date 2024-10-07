@@ -106,7 +106,7 @@
         
         <!-- End Popular Categories -->
 
-        <!-- Best Doctors -->
+        <!-- Best Alumnis -->
         <section class="mt-4 lg:mt-16">
             <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
