@@ -27,20 +27,20 @@
                     Home
                 </a>
                 <a
-                    href="#"
-                    class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                    href="{{ route('testimoni.index') }}"
+                    class="text-[#1E2B4F] relative {{ request()->is('testimoni') ? "after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }}"
                 >
                     Testimoni
                 </a>
                 <a
-                    href="#"
-                    class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                    href="{{ route('category.index') }}"
+                    class="text-[#1E2B4F] relative {{ request()->is('category') ? "after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }}"
                 >
                     Category
                 </a>
                 <a
-                    href="#"
-                    class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                    href="{{ route('campus.index') }}"
+                    class="text-[#1E2B4F] relative {{ request()->is('campus') ? "after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }}"
                 >
                     Campus
                 </a>
