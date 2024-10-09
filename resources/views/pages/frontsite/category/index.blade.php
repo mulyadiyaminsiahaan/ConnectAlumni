@@ -38,7 +38,6 @@
             </div>
         </section>
         
-        <!-- End Popular Categories -->
 
         <!-- Best Alumnis -->
         <section class="mt-4 lg:mt-16">
@@ -46,7 +45,6 @@
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
                 <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
 
-                <!-- Static Doctor Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
 
                     <a href="#" class="group">
@@ -132,7 +130,7 @@
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
+
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">
