@@ -59,5 +59,8 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "inputmask": "file:"
   }
 }
