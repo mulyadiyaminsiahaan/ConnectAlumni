@@ -160,8 +160,6 @@
                 </div>
             </div>
         </section>
-        
-        <!-- End Social Media -->
 
     </main>
     <!-- End Content -->

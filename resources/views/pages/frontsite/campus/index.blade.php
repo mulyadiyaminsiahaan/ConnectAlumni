@@ -96,8 +96,7 @@
         </section>
         
         <!-- End Social Media -->
-
     </main>
-    <!-- End Content -->
+
 
 @endsection
