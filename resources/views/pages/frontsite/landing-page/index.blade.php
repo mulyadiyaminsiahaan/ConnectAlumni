@@ -20,8 +20,6 @@
                 </div>
             </div>
 
-            <!-- Hero Description -->
-            <!-- Bubble Animation -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="absolute top-0 left-1/4 w-32 h-32 bg-blue-300 rounded-full opacity-50 animate-bounce"></div>
                 <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-blue-400 rounded-full opacity-50 animate-bounce delay-200"></div>
@@ -111,7 +109,6 @@
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
                 <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
 
-                <!-- Static Doctor Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
 
                     <a href="#" class="group">
@@ -134,13 +131,10 @@
                         </div>
                     </a>
 
-                    <!-- Add more static doctor cards as needed -->
-
                 </div>
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">
