@@ -127,7 +127,7 @@
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
                 <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
 
-                <!-- Static Doctor Cards without database data -->
+                <!-- Static Alumni Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
                     {{-- alumni 1 --}}
                     <a href="#" class="group">
@@ -220,7 +220,7 @@
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
+        <!-- End Best Alumnis -->
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">
@@ -247,6 +247,10 @@
                         <img src="{{ asset('/assets/frontsite/images/whatsapp.svg') }}" alt="WhatsApp" class="w-8 h-8 mx-4">
                     </a>
                 </div>
+                {{-- tambahkan Copyright --}}
+                <div class="flex justify-center mt-10">
+                    <p class="text-[#1E2B4F] mt-2">Copyright © ConnectAlumni. inc.</p>
+                     </div>
                 </div>
             </div>
         </section>
