@@ -160,7 +160,7 @@ you may at your option offer warranty protection in exchange for a fee.
   2. You may modify your copy or copies of the Program or any portion
 of it, thus forming a work based on the Program, and copy and
 distribute such modifications or work under the terms of Section 1
-above, provided that you also meet all of these conditions:
+above, provided that you also Connect all of these conditions:
 
     a) You must cause the modified files to carry prominent notices
     stating that you changed the files and the date of any change.
@@ -518,7 +518,7 @@ fee.
   2. You may modify your copy or copies of the Library or any portion
 of it, thus forming a work based on the Library, and copy and
 distribute such modifications or work under the terms of Section 1
-above, provided that you also meet all of these conditions:
+above, provided that you also Connect all of these conditions:
 
     a) The modified work must itself be a software library.
 

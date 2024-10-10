@@ -3,6 +3,7 @@
 @section('title', 'Testimoni')
 
 @section('content')
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +51,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100 p-10">
     <div class="flex flex-col gap-8"> <!-- Flex column for vertical layout -->
 

@@ -22,20 +22,36 @@
                 <p class="text-[#A7B0B5] mt-2">Quick way to get your first experience</p>
         
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-10">
-                    <!-- Cards without database data -->
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                        <h5 class="text-[#1E2B4F] text-lg font-semibold">System Analyst</h5>
-                        <p class="text-[#AFAEC3] mt-1">143 alumni</p>
-                    </a>
-        
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Programmer</h5>
-                        <p class="text-[#AFAEC3] mt-1">50 alumni</p>
-                    </a>
-        
-                    <!-- Add more static categories as needed -->
-                </div>
+                  <!-- Cards without database data -->
+                  <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <h5 class="text-[#1E2B4F] text-lg font-semibold">System Analyst</h5>
+                    <p class="text-[#AFAEC3] mt-1">143 alumni</p>
+                </a>
+    
+                <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <h5 class="text-[#1E2B4F] text-lg font-semibold">Programmer</h5>
+                    <p class="text-[#AFAEC3] mt-1">50 alumni</p>
+                </a>
+
+                {{-- add more cards without database --}}
+                <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <h5 class="text-[#1E2B4F] text-lg font-semibold">UI/UX Designer</h5>
+                    <p class="text-[#AFAEC3] mt-1">100 alumni</p>
+                </a>
+
+                <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <h5 class="text-[#1E2B4F] text-lg font-semibold">Data Analyst</h5>
+                    <p class="text-[#AFAEC3] mt-1">80 alumni</p>
+                </a>
+
+                <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <h5 class="text-[#1E2B4F] text-lg font-semibold">Network Engineer</h5>
+                    <p class="text-[#AFAEC3] mt-1">120 alumni</p>
+                </a>
+    
+                <!-- Add more static categories as needed -->
             </div>
+        </div>
         </section>
         
         <!-- End Popular Categories -->
@@ -46,12 +62,12 @@
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
                 <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
 
-                <!-- Static Doctor Cards without database data -->
+                <!-- Static Alumni Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
 
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/doctor-1.jpeg') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -59,7 +75,7 @@
 
                         <div class="flex items-center justify-between mt-5">
                             <div>
-                                <div class="text-[#1E2B4F] text-lg font-semibold">Sahala</div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Lile</div>
                                 <div class="text-[#AFAEC3] mt-1">Programmer</div>
                             </div>
                             <div class="flex items-center space-x-2">
@@ -71,7 +87,7 @@
                     
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/doctor-1.jpeg') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -79,8 +95,8 @@
 
                         <div class="flex items-center justify-between mt-5">
                             <div>
-                                <div class="text-[#1E2B4F] text-lg font-semibold">Sahala</div>
-                                <div class="text-[#AFAEC3] mt-1">Programmer</div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Daniel</div>
+                                <div class="text-[#AFAEC3] mt-1">Data Analyst</div>
                             </div>
                             <div class="flex items-center space-x-2">
                                 {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
@@ -91,7 +107,7 @@
 
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/doctor-1.jpeg') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -99,8 +115,8 @@
 
                         <div class="flex items-center justify-between mt-5">
                             <div>
-                                <div class="text-[#1E2B4F] text-lg font-semibold">Sahala</div>
-                                <div class="text-[#AFAEC3] mt-1">Programmer</div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Jevania</div>
+                                <div class="text-[#AFAEC3] mt-1">Quality Assurance</div>
                             </div>
                             <div class="flex items-center space-x-2">
                                 {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
@@ -111,7 +127,7 @@
 
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/doctor-1.jpeg') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -119,8 +135,8 @@
 
                         <div class="flex items-center justify-between mt-5">
                             <div>
-                                <div class="text-[#1E2B4F] text-lg font-semibold">Sahala</div>
-                                <div class="text-[#AFAEC3] mt-1">Programmer</div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Suprianto</div>
+                                <div class="text-[#AFAEC3] mt-1">UI/UX</div>
                             </div>
                             <div class="flex items-center space-x-2">
                                 {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
@@ -132,7 +148,7 @@
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
+        <!-- End Best Alumnis -->
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">

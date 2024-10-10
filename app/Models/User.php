@@ -67,10 +67,10 @@ class User extends Authenticatable
     }
 
     //one to many
-    public function meet()
+    public function Connect()
     {
         //2 parameter (path model, field foreign key)
-        return $this->hasMany('App\Models\Operasional\Meet', 'user_id');
+        return $this->hasMany('App\Models\Operasional\Connect', 'user_id');
     }
 
      //one to many

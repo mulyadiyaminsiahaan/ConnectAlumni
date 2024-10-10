@@ -14,7 +14,7 @@
                     <img
                         class="h-12 lg:h-16"
                         src="{{ asset('/assets/frontsite/images/logo.png') }}"
-                        alt="Meet Doctor Logo"
+                        alt="Connect Alumni Logo"
                     />
                 </a>
 

@@ -4,7 +4,7 @@
 
         @include('includes.frontsite.meta')
 
-        <title>@yield('title') | MeetDoctor</title>
+        <title>@yield('title') | ConnectAlumni</title>
 
         @stack('before-style')
             @include('includes.frontsite.style')

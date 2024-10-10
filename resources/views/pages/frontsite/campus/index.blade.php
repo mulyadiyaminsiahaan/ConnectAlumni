@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'campus')
+@section('title', 'Campus')
 
 @section('content')
 
@@ -49,7 +49,7 @@
                     <!-- Add more static categories as needed -->
                 </div>
                 <div class="bg-opacity-70 flex justify-center items-center">
-                        <button class="block text-xs  text-black font-medium  px-4 py-2 rounded-full text-center mt-7" style="background-color: rgb(255, 164, 27);">More Post</span>
+                    <a href="https://www.del.ac.id/?page_id=1006" target="_blank" class="block text-xs text-black font-medium px-4 py-2 rounded-full text-center mt-7" style="background-color: rgb(255, 164, 27);">More Post</a>
                 </div>
             </div>
         </section>
@@ -57,7 +57,7 @@
         <!-- End Popular Categories -->
 
 
-                <!-- Static Doctor Cards without database data -->
+                <!-- Static Alumni Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
 
                     <a href="#" class="group">
@@ -68,7 +68,7 @@
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
+        <!-- End Best Alumnis -->
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">

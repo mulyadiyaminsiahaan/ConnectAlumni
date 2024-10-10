@@ -132,7 +132,7 @@
                     {{-- alumni 1 --}}
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/foto1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -149,13 +149,13 @@
                             </div>
                         </div>
                     </a>
-                    {{-- tambahkan beberapa doctor cards statis yang diperlukan --}}
-                    <!-- Add more static doctor cards as needed -->
+                    {{-- tambahkan beberapa Alumni cards statis yang diperlukan --}}
+                    <!-- Add more static Alumni cards as needed -->
 
                     {{-- alumni 2--}}
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/foto2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -175,7 +175,7 @@
                     {{-- alumni 3 --}}
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/foto3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -195,7 +195,7 @@
                     {{-- orang 4 --}}
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/foto4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -213,8 +213,8 @@
                         </div>
                     </a>
                 </div>
-                    {{-- tambahkan beberapa doctor cards statis yang diperlukan --}}
-                    <!-- Add more static doctor cards as needed -->
+                    {{-- tambahkan beberapa Alumni cards statis yang diperlukan --}}
+                    <!-- Add more static Alumni cards as needed -->
 
                 
                 <!-- End Card -->

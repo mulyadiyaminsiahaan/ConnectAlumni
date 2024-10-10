@@ -1,21 +1,21 @@
-#doctor-profile .clndr-controls {
+#Alumni-profile .clndr-controls {
   background : white !important;
   color : black;
 }
 
-#doctor-profile .days-of-the-week {
+#Alumni-profile .days-of-the-week {
   background : #1E9FF2;
 }
 
-#doctor-profile .day-number {
+#Alumni-profile .day-number {
   border-color : #1E9FF2;
 }
 
-#doctor-profile .today {
+#Alumni-profile .today {
   background : #1E9FF2;
 }
 
-#doctor-profile .event-listing-title {
+#Alumni-profile .event-listing-title {
   background : #28D094;
 }
 

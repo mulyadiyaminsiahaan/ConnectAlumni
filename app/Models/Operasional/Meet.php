@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Meet extends Model
+class Connect extends Model
 {
      //use HasFactory;
 
 //    use SoftDeletes;
 
    //declare table
-   public $table = 'meet';
+   public $table = 'Connect';
 
    //this field must type date yyyy-mm-dd hh:mm:ss 
    protected $dates = [

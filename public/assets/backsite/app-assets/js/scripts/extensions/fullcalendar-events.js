@@ -31,9 +31,9 @@ $(document).ready(function () {
         constraint: 'businessHours'
       },
       {
-        title: 'Meeting',
+        title: 'Connecting',
         start: '2016-06-13T11:00:00',
-        constraint: 'availableForMeeting', // defined below
+        constraint: 'availableForConnecting', // defined below
         color: '#257e4a'
       },
       {
@@ -46,15 +46,15 @@ $(document).ready(function () {
         start: '2016-06-29T20:00:00'
       },
 
-      // areas where "Meeting" must be dropped
+      // areas where "Connecting" must be dropped
       {
-        id: 'availableForMeeting',
+        id: 'availableForConnecting',
         start: '2016-06-11T10:00:00',
         end: '2016-06-11T16:00:00',
         rendering: 'background'
       },
       {
-        id: 'availableForMeeting',
+        id: 'availableForConnecting',
         start: '2016-06-13T10:00:00',
         end: '2016-06-13T16:00:00',
         rendering: 'background'
@@ -125,7 +125,7 @@ $(document).ready(function () {
         color: '#EB98A0'
       },
       {
-        title: 'Meeting',
+        title: 'Connecting',
         start: '2016-06-12T10:30:00',
         end: '2016-06-12T12:30:00',
         color: '#EB98A0'
@@ -136,7 +136,7 @@ $(document).ready(function () {
         color: '#EB98A0'
       },
       {
-        title: 'Meeting',
+        title: 'Connecting',
         start: '2016-06-12T14:30:00',
         color: '#EB98A0'
       },
