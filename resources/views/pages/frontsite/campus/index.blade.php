@@ -49,7 +49,7 @@
                     <!-- Add more static categories as needed -->
                 </div>
                 <div class="bg-opacity-70 flex justify-center items-center">
-                    <a href="https://www.del.ac.id/?page_id=1006" target="_blank" class="block text-xs text-black font-medium px-4 py-2 rounded-full text-center mt-7" style="background-color: rgb(255, 164, 27);">More Post</a>
+                    <a href="https://www.del.ac.id/?page_id=1006" target="_blank" class="block text-xs text-black font-medium px-4 py-2 rounded-full text-center mt-7" style="background-color: rgb(255, 164, 27);">More Info</a>
                 </div>
             </div>
         </section>

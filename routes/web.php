@@ -6,6 +6,8 @@ use App\Http\Controllers\Frontsite\CategoryController;
 use App\Http\Controllers\Frontsite\TestimoniController;
 use App\Http\Controllers\Frontsite\CampusController;
 use App\Http\Controllers\Backsite\DashboardController;
+//controller
+use App\Http\Controllers\AdminController;
 
 // Mengarahkan root '/' ke metode index dari LandingController
 Route::get('/', [LandingController::class, 'index'])->name('index');
@@ -23,5 +25,8 @@ Route::get('/campus', [CampusController::class, 'index'])->name('campus.index');
 Route::prefix('backsite')->name('backsite.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
+
+// Mengarahkan '/admin' ke metode index dari AdminController
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 
