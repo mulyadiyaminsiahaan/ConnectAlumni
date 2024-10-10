@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('config_payment', function (Blueprint $table) {
+        Schema::create('campus', function (Blueprint $table) {
             $table->id();
-            $table->string('fee');
-            $table->string('vat');
+            $table->string('news');
+            $table->date('date');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('config_payment');
+        Schema::dropIfExists('campus');
     }
 };

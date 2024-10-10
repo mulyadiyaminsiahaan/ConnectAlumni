@@ -12,9 +12,9 @@
             <!-- Hero Image -->
             <div class="hidden lg:block lg:absolute lg:z-10 lg:top-0 lg:right-0"
             aria-hidden="true">
-                <img src="{{ asset('/assets/frontsite/images/hero-image.png') }}" class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Hero Image"/>
+                <img src="{{ asset('/assets/frontsite/images/hero-image1.png') }}" class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Hero Image"/>
                 <div class="text-center absolute bottom-0 -left-20 -translate-y-14 bg-white px-7 py-5 rounded-xl shadow-2xl">
-                    <h5 class="font-medium text-[#1E2B4F]">Tamara</h5>
+                    <h5 class="font-medium text-[#1E2B4F]">Johannes</h5>
                     <p class="text-xs text-[#AFAEC3] mt-1">Programmer</p>
                     <span class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</span>
                 </div>
@@ -97,6 +97,22 @@
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">Programmer</h5>
                         <p class="text-[#AFAEC3] mt-1">50 alumni</p>
                     </a>
+
+                    {{-- add more cards without database --}}
+                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">UI/UX Designer</h5>
+                        <p class="text-[#AFAEC3] mt-1">100 alumni</p>
+                    </a>
+
+                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Data Analyst</h5>
+                        <p class="text-[#AFAEC3] mt-1">80 alumni</p>
+                    </a>
+
+                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Network Engineer</h5>
+                        <p class="text-[#AFAEC3] mt-1">120 alumni</p>
+                    </a>
         
                     <!-- Add more static categories as needed -->
                 </div>
@@ -113,10 +129,10 @@
 
                 <!-- Static Doctor Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
-
+                    {{-- alumni 1 --}}
                     <a href="#" class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                            <img src="{{ asset('/assets/frontsite/images/doctor-1.jpeg') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <img src="{{ asset('/assets/frontsite/images/foto1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
                             </div>
@@ -124,7 +140,7 @@
 
                         <div class="flex items-center justify-between mt-5">
                             <div>
-                                <div class="text-[#1E2B4F] text-lg font-semibold">Sahala</div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Lile</div>
                                 <div class="text-[#AFAEC3] mt-1">Programmer</div>
                             </div>
                             <div class="flex items-center space-x-2">
@@ -133,10 +149,74 @@
                             </div>
                         </div>
                     </a>
-
+                    {{-- tambahkan beberapa doctor cards statis yang diperlukan --}}
                     <!-- Add more static doctor cards as needed -->
 
+                    {{-- alumni 2--}}
+                    <a href="#" class="group">
+                        <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
+                            <img src="{{ asset('/assets/frontsite/images/foto2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
+                                <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-5">
+                            <div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Daniel</div>
+                                <div class="text-[#AFAEC3] mt-1">Data Analyst</div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
+                                {{-- <span class="block text-[#1E2B4F] font-medium">4.5</span> --}}
+                            </div>
+                        </div>
+                    </a>
+                    {{-- alumni 3 --}}
+                    <a href="#" class="group">
+                        <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
+                            <img src="{{ asset('/assets/frontsite/images/foto3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
+                                <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-5">
+                            <div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Jevania</div>
+                                <div class="text-[#AFAEC3] mt-1">Quality Assurance</div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
+                                {{-- <span class="block text-[#1E2B4F] font-medium">4.5</span> --}}
+                            </div>
+                        </div>
+                    </a>
+                    {{-- orang 4 --}}
+                    <a href="#" class="group">
+                        <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
+                            <img src="{{ asset('/assets/frontsite/images/foto4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor Name">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
+                                <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-5">
+                            <div>
+                                <div class="text-[#1E2B4F] text-lg font-semibold">Suprianto</div>
+                                <div class="text-[#AFAEC3] mt-1">UI/UX</div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                {{-- <img src="{{ asset('/assets/frontsite/images/star.svg') }}"> --}}
+                                {{-- <span class="block text-[#1E2B4F] font-medium">4.5</span> --}}
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                    {{-- tambahkan beberapa doctor cards statis yang diperlukan --}}
+                    <!-- Add more static doctor cards as needed -->
+
+                
                 <!-- End Card -->
             </div>
         </section>
