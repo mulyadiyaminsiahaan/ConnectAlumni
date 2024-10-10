@@ -93,7 +93,9 @@
 
         /* Tombol toggle sidebar */
         .toggle-btn {
-            width: 100%; /* Membuat tombol selebar sidebar */
+            position: fixed;
+            top: 20px;
+            left: 20px;
             font-size: 18px;
             background-color: transparent; /* Membuat background transparan */
             color: #0a0a0a; /* Warna teks tetap hitam untuk kontras */
@@ -101,7 +103,7 @@
             border: none;
             cursor: pointer;
             transition: 0.3s;
-            text-align: left; /* Agar teks berada di kiri */
+            z-index: 1000; /* Pastikan tombol berada di atas elemen lainnya */
         }
 
         .toggle-btn:hover {
@@ -112,9 +114,11 @@
 </head>
 <body>
 
+    <!-- Tombol toggle sidebar -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
         <a href="#">Beranda</a>
         <a href="#">Report Data</a>
