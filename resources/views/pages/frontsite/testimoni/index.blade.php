@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        
         .video-card {
             position: relative;
             background-color: white;
@@ -40,6 +41,12 @@
         .video-image {
             position: relative;
             margin-right: 1rem; /* Add some spacing between image and text */
+        }
+
+        .video-image img {
+            width: 400px !important; /* Set a larger fixed width */
+            height: 300px !important; /* Set a larger fixed height */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
         }
     </style>
 </head>
@@ -113,6 +120,54 @@
                 <p class="text-xs text-gray-500">Information System 2015</p>
             </div>
         </div>
+
+        {{-- tambahkan gambar buttonadd.png sebagai button mengambang di sisi kanan bawah --}}
+        @if(Auth::check())
+        <a href="#" class="fixed bottom-0 right-0 m-4" onclick="toggleTestimoniForm(event)">
+            <img src="{{ asset('/assets/frontsite/images/buttonadd.png') }}" alt="Add Testimoni" class="w-16 h-16">            
+        </a>
+
+        {{-- Form Testimoni Pop-up --}}
+        <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold mb-4">Add Testimoni</h2>
+            <form>
+            <div class="mb-4">
+            <label for="job" class="block text-sm font-medium text-gray-700">Job</label>
+            <input type="text" name="job" id="job" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+            <div class="mb-4">
+            <label for="study_program" class="block text-sm font-medium text-gray-700">Study Program</label>
+            <input type="text" name="study_program" id="study_program" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+            <div class="mb-4">
+            <label for="force" class="block text-sm font-medium text-gray-700">Force</label>
+            <input type="text" name="force" id="force" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+            <div class="mb-4">
+            <label for="headline" class="block text-sm font-medium text-gray-700">Headline</label>
+            <input type="text" name="headline" id="headline" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+            <div class="mb-4">
+            <label for="video_link" class="block text-sm font-medium text-gray-700">Video Link</label>
+            <input type="url" name="video_link" id="video_link" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+            <div class="flex justify-end">
+            <button type="button" class="mr-4 text-gray-500" onclick="toggleTestimoniForm(event)">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+            </div>
+            </form>
+            </div>
+        </div>
+
+        <script>
+            function toggleTestimoniForm(event) {
+            event.preventDefault();
+            const testimoniForm = document.getElementById('testimoniForm');
+            testimoniForm.classList.toggle('hidden');
+            }
+        </script>
+        @endif
     </div>
 </body>
 @endsection
