@@ -49,7 +49,7 @@ $(document).ready(function(){
         },
         {
             id: 999,
-            title: 'Meeting',
+            title: 'Connecting',
             start: '2019-01-09T16:00:00',
             color:  '#00bcd4'
         },
@@ -60,13 +60,13 @@ $(document).ready(function(){
             color:'#3f51b5'
         },
         {
-            title: 'Conference Meeting',
+            title: 'Conference Connecting',
             start: '2019-01-11',
             end: '2019-01-13',
             color:'#e51c23'
         },
         {
-            title: 'Meeting',
+            title: 'Connecting',
             start: '2019-01-12T10:30:00',
             end: '2019-01-12T12:30:00',
             color:'#00bcd4'
@@ -171,7 +171,7 @@ $(document).ready(function(){
           end: '2016-06-13'
         },
         {
-          title: 'Meeting',
+          title: 'Connecting',
           start: '2016-06-12T10:30:00',
           end: '2016-06-12T12:30:00'
         },
@@ -180,7 +180,7 @@ $(document).ready(function(){
           start: '2016-06-12T12:00:00'
         },
         {
-          title: 'Meeting',
+          title: 'Connecting',
           start: '2016-06-12T14:30:00'
         },
         {

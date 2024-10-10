@@ -57,7 +57,7 @@
         <!-- End Popular Categories -->
 
 
-                <!-- Static Doctor Cards without database data -->
+                <!-- Static Alumni Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
 
                     <a href="#" class="group">
@@ -68,7 +68,7 @@
                 <!-- End Card -->
             </div>
         </section>
-        <!-- End Best Doctors -->
+        <!-- End Best Alumnis -->
 
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">

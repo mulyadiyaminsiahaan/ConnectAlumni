@@ -1,5 +1,5 @@
 // Wizard tabs with icons setup
-$(".add-doctors-tab").steps({
+$(".add-Alumnis-tab").steps({
     headerTag: "h6",
     bodyTag: "fieldset",
     transitionEffect: "fade",

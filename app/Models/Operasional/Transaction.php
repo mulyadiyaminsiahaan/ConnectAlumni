@@ -13,7 +13,7 @@ class Transaction extends Model
 //    use SoftDeletes;
 
    //declare table
-   public $table = 'meet';
+   public $table = 'Connect';
 
    //this field must type date yyyy-mm-dd hh:mm:ss 
    protected $dates = [
@@ -37,9 +37,9 @@ class Transaction extends Model
    ];
 
     //one to many
-    public function meet()
+    public function Connect()
     {
         //3 parameter (path model, field foreign key, field primary key from table haMany/hasOne)
-        return $this->belongsTo('App\Models\Operasional\Meet', 'meet_id', 'id');
+        return $this->belongsTo('App\Models\Operasional\Connect', 'Connect_id', 'id');
     }
 }

@@ -39,7 +39,7 @@ $(document).ready(function () {
       },
       {
         id: 999,
-        title: 'Meeting',
+        title: 'Connecting',
         start: '2019-01-09T16:00:00',
         color: '#00bcd4'
       },
@@ -50,13 +50,13 @@ $(document).ready(function () {
         color: '#3f51b5'
       },
       {
-        title: 'Conference Meeting',
+        title: 'Conference Connecting',
         start: '2019-01-11',
         end: '2019-01-13',
         color: '#e51c23'
       },
       {
-        title: 'Meeting',
+        title: 'Connecting',
         start: '2019-01-12T10:30:00',
         end: '2019-01-12T12:30:00',
         color: '#00bcd4'

@@ -45,7 +45,7 @@ $(document).ready(function(){
 				end: '2016-06-13'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T10:30:00',
 				end: '2016-06-12T12:30:00'
 			},
@@ -54,7 +54,7 @@ $(document).ready(function(){
 				start: '2016-06-12T12:00:00'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T14:30:00'
 			},
 			{
@@ -119,7 +119,7 @@ $(document).ready(function(){
 				end: '2016-06-13'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T10:30:00',
 				end: '2016-06-12T12:30:00'
 			},
@@ -128,7 +128,7 @@ $(document).ready(function(){
 				start: '2016-06-12T12:00:00'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T14:30:00'
 			},
 			{
@@ -193,7 +193,7 @@ $(document).ready(function(){
 				end: '2016-06-13'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T10:30:00',
 				end: '2016-06-12T12:30:00'
 			},
@@ -202,7 +202,7 @@ $(document).ready(function(){
 				start: '2016-06-12T12:00:00'
 			},
 			{
-				title: 'Meeting',
+				title: 'Connecting',
 				start: '2016-06-12T14:30:00'
 			},
 			{

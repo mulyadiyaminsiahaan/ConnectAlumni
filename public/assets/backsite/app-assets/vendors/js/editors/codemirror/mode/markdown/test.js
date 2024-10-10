@@ -624,8 +624,8 @@
      "  [variable-3 * For the most part, this makes sense while writing a list.]",
      "    [keyword * This means two items with same indentation can be different levels.]",
      "     [keyword *  Each level has an indent requirement that can change between items.]",
-     "       [keyword * A list item that meets this will be part of the next level.]",
-     "   [variable-3 * Otherwise, it will be part of the level where it does meet this.]",
+     "       [keyword * A list item that Connects this will be part of the next level.]",
+     "   [variable-3 * Otherwise, it will be part of the level where it does Connect this.]",
      " [variable-2 * World]");
 
   // should handle nested and un-nested lists

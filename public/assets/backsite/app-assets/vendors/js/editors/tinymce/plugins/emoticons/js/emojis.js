@@ -1027,13 +1027,13 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "people"
   },
   woman_health_worker: {
-    keywords: [ "doctor", "nurse", "therapist", "healthcare", "woman", "human" ],
+    keywords: [ "Alumni", "nurse", "therapist", "healthcare", "woman", "human" ],
     "char": "\ud83d\udc69\u200d\u2695\ufe0f",
     fitzpatrick_scale: true,
     category: "people"
   },
   man_health_worker: {
-    keywords: [ "doctor", "nurse", "therapist", "healthcare", "man", "human" ],
+    keywords: [ "Alumni", "nurse", "therapist", "healthcare", "man", "human" ],
     "char": "\ud83d\udc68\u200d\u2695\ufe0f",
     fitzpatrick_scale: true,
     category: "people"
@@ -4717,7 +4717,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "travel_and_places"
   },
   hospital: {
-    keywords: [ "building", "health", "surgery", "doctor" ],
+    keywords: [ "building", "health", "surgery", "Alumni" ],
     "char": "\ud83c\udfe5",
     fitzpatrick_scale: false,
     category: "travel_and_places"
@@ -5275,13 +5275,13 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "objects"
   },
   pill: {
-    keywords: [ "health", "medicine", "doctor", "pharmacy", "drug" ],
+    keywords: [ "health", "medicine", "Alumni", "pharmacy", "drug" ],
     "char": "\ud83d\udc8a",
     fitzpatrick_scale: false,
     category: "objects"
   },
   syringe: {
-    keywords: [ "health", "hospital", "drugs", "blood", "medicine", "needle", "doctor", "nurse" ],
+    keywords: [ "health", "hospital", "drugs", "blood", "medicine", "needle", "Alumni", "nurse" ],
     "char": "\ud83d\udc89",
     fitzpatrick_scale: false,
     category: "objects"
