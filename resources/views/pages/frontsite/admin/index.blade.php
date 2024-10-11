@@ -1,10 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @section('title', 'Admin')
 
 @section('content')
 
 >>>>>>> 028fac8be9b330aef824798f3d53c990dd884566
+=======
+>>>>>>> 2f2ab6ca0ab584cf7bab757a86592d3b2d11926e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,7 +231,7 @@
         /* Sidebar */
         .sidebar {
             height: 100vh;
-            width: 400px;
+            width: 250px;
             position: fixed;
             top: 0;
             left: 0;
@@ -244,7 +247,7 @@
         }
 
         .sidebar a {
-            padding: 20px;
+            padding: 15px;
             text-decoration: none;
             font-size: 18px;
             color: #0a0a0a;
@@ -306,9 +309,7 @@
 
         /* Tombol toggle sidebar */
         .toggle-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
+            width: 100%; /* Membuat tombol selebar sidebar */
             font-size: 18px;
             background-color: transparent; /* Membuat background transparan */
             color: #0a0a0a; /* Warna teks tetap hitam untuk kontras */
@@ -316,23 +317,17 @@
             border: none;
             cursor: pointer;
             transition: 0.3s;
-            z-index: 1000; /* Pastikan tombol berada di atas elemen lainnya */
+            text-align: left; /* Agar teks berada di kiri */
         }
 
-        .toggle-btn:hover {
-            background-color: rgba(0, 0, 0, 0.1); /* Warna background saat hover */
-        }
+
 
     </style>
 </head>
 <body>
 
-    <!-- Tombol toggle sidebar -->
-    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
         <a href="#">Beranda</a>
         <a href="#">Report Data</a>
@@ -340,45 +335,46 @@
         <a href="#">Pengaturan</a>
     </div>
 
-<!-- Main content -->
-<div class="main-content" id="mainContent">
-    <h1>Beranda</h1>
-    <p>This is your admin dashboard. Manage your site from here.</p>
+    <!-- Main content -->
+    <div class="main-content" id="mainContent">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Beranda</h1>
+        <p>This is your admin dashboard. Manage your site from here.</p>
 
-    <div class="table-responsive small">
-        <table class="table table-striped table-sm">
-            <thead>
+        <div class="table-responsive small">
+            <table class="table table-striped table-sm">
+              <thead>
                 <tr>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">Waktu</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Deskripsi</th>
+                  <th scope="col">Waktu</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 <tr>
-                    <td>Sangid Astawa</td>
-                    <td>terjadi pelanggaran user</td>
-                    <td>15 jam yang lalu</td>
-                </tr>
-                <tr>
-                    <td>Ade Kesuma</td>
-                    <td>terjadi pelanggaran user</td>
-                    <td>10/12/2021</td>
+                  <td>Sangid Astawa</td>
+                  <td>terjadi pelanggaran user</td>
+                  <td>15 jam yang lalu</td>
                 </tr>
                 <tr>
-                    <td>Wardita</td>
-                    <td>terjadi pelanggaran user</td>
-                    <td>08/05/2021</td>
+                  <td>Ade Kesuma</td>
+                  <td>terjadi pelanggaran user</td>
+                  <td>10/12/2021</td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                  <td>Wardita</td>
+                  <td>terjadi pelanggaran user</td>
+                  <td>08/05/2021</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<!-- JavaScript untuk toggle sidebar -->
-<script>
-    function toggleSidebar() {
-        var sidebar
+    <!-- JavaScript untuk toggle sidebar -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
             var mainContent = document.getElementById("mainContent");
 
             // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
