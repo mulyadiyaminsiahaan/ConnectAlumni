@@ -1,3 +1,7 @@
+@section('title', 'Admin')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
         /* Sidebar */
         .sidebar {
             height: 100vh;
-            width: 250px;
+            width: 400px;
             position: fixed;
             top: 0;
             left: 0;
@@ -31,7 +35,7 @@
         }
 
         .sidebar a {
-            padding: 15px;
+            padding: 20px;
             text-decoration: none;
             font-size: 18px;
             color: #0a0a0a;
@@ -113,54 +117,57 @@
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-        <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
-        <a href="#">Beranda</a>
-        <a href="#">Report Data</a>
-        <a href="#">Delete</a>
-        <a href="#">Pengaturan</a>
+<div class="sidebar" id="sidebar">
+    <div style="display: flex; align-items: center; justify-content: center; padding: 10px 20px; flex-direction: column;">
+        <!-- Tombol toggle dan logo -->
+        <button class="toggle-btn" onclick="toggleSidebar()" style="font-size: 160%; margin-bottom: 15px;">☰</button>
+        <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Connect Alumni" style="width: 250px; height: auto;">
     </div>
+    <a href="#">Beranda</a>
+    <a href="{{ route('report.index') }}">Report Data</a>
+    <a href="{{ route('delete.index') }}">Delete</a>
+    <a href="{{ route('pengaturan.index') }}">Pengaturan</a>
+</div>
 
-    <!-- Main content -->
-    <div class="main-content" id="mainContent">
-        <h1>Beranda</h1>
-        <p>This is your admin dashboard. Manage your site from here.</p>
+<!-- Main content -->
+<div class="main-content" id="mainContent">
+    <h1>Beranda</h1>
+    <p>This is your admin dashboard. Manage your site from here.</p>
 
-        <div class="table-responsive small">
-            <table class="table table-striped table-sm">
-              <thead>
+    <div class="table-responsive small">
+        <table class="table table-striped table-sm">
+            <thead>
                 <tr>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Deskripsi</th>
-                  <th scope="col">Waktu</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Waktu</th>
                 </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
                 <tr>
-                  <td>Sangid Astawa</td>
-                  <td>terjadi pelanggaran user</td>
-                  <td>15 jam yang lalu</td>
-                </tr>
-                <tr>
-                  <td>Ade Kesuma</td>
-                  <td>terjadi pelanggaran user</td>
-                  <td>10/12/2021</td>
+                    <td>Sangid Astawa</td>
+                    <td>terjadi pelanggaran user</td>
+                    <td>15 jam yang lalu</td>
                 </tr>
                 <tr>
-                  <td>Wardita</td>
-                  <td>terjadi pelanggaran user</td>
-                  <td>08/05/2021</td>
+                    <td>Ade Kesuma</td>
+                    <td>terjadi pelanggaran user</td>
+                    <td>10/12/2021</td>
                 </tr>
-              </tbody>
-            </table>
-        </div>
+                <tr>
+                    <td>Wardita</td>
+                    <td>terjadi pelanggaran user</td>
+                    <td>08/05/2021</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>
 
-    <!-- JavaScript untuk toggle sidebar -->
-    <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
+<!-- JavaScript untuk toggle sidebar -->
+<script>
+    function toggleSidebar() {
+        var sidebar
             var mainContent = document.getElementById("mainContent");
 
             // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
