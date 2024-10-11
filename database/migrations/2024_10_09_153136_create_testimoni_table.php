@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('force')->nullable();
             $table->string('headline')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

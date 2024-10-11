@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('program_name');
             $table->string('PS_ID');
             $table->string('Degree_Level');
-
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

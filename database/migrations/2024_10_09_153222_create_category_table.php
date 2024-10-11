@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('wa');
             $table->string('job');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

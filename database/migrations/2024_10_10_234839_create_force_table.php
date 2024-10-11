@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('force_id');
             $table->string('Year');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
