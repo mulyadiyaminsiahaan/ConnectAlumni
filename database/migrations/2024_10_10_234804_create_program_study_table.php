@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('program_study', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('ig');
-            $table->string('wa');
-            $table->string('job');
+            //tambahkan tabel program_study yaitu program_name, PS_ID, Degree_Level
+            $table->string('program_name');
+            $table->string('PS_ID');
+            $table->string('Degree_Level');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('program_study');
     }
 };

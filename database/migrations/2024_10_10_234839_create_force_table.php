@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('campus', function (Blueprint $table) {
+        Schema::create('force', function (Blueprint $table) {
             $table->id();
-            $table->string('news');
-            $table->date('date');
+            //tambahkan tabel force yaitu force_id, Year
+            $table->string('force_id');
+            $table->string('Year');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('campus');
+        Schema::dropIfExists('force');
     }
 };
