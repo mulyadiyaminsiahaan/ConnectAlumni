@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\ConnectedController;
 
 // Mengarahkan root '/' ke metode index dari LandingController
 Route::get('/', [LandingController::class, 'index'])->name('index');
@@ -40,6 +41,9 @@ Route::get('/delete', [DeleteController::class, 'index'])->name('delete.index');
 
 // Mengarahkan '/admin/pengaturan' ke metode index dari PengaturanController
 Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+
+// Mengarahkan '/admin/connected' ke metode index dari ConnectedController
+Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
 
 
 
