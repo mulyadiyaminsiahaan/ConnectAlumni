@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('job', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('ig');
-            $table->string('wa');
-            $table->string('job');
+            //tambahkan tabel job yaitu job_id, job_title, Company_name, Start_date, End_date
+            $table->string('job_id');
+            $table->string('job_title');
+            $table->string('Company_name');
+            $table->string('Start_date');
+            $table->string('End_date');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('job');
     }
 };

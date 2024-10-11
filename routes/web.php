@@ -8,6 +8,9 @@ use App\Http\Controllers\Frontsite\CampusController;
 use App\Http\Controllers\Backsite\DashboardController;
 //controller
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\PengaturanController;
 
 // Mengarahkan root '/' ke metode index dari LandingController
 Route::get('/', [LandingController::class, 'index'])->name('index');
@@ -28,5 +31,16 @@ Route::prefix('backsite')->name('backsite.')->group(function () {
 
 // Mengarahkan '/admin' ke metode index dari AdminController
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+// Mengarahkan '/admin/report' ke metode index dari ReportController
+Route::get('/report', [ReportController::class, 'index'])->name('report.index');
+
+// Mengarahkan '/admin/delete' ke metode index dari DeleteController
+Route::get('/delete', [DeleteController::class, 'index'])->name('delete.index');
+
+// Mengarahkan '/admin/pengaturan' ke metode index dari PengaturanController
+Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+
+
 
 

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('social_media', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('ig');
-            $table->string('wa');
-            $table->string('job');
+            //tambahkan tabel social_media yaitu sm_id, Platform_name, Username, URL
+            $table->string('sm_id');
+            $table->string('Platform_name');
+            $table->string('Username');
+            $table->string('URL');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('social_media');
     }
 };
