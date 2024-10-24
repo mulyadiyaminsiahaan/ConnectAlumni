@@ -45,6 +45,11 @@ Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengatu
 // Mengarahkan '/admin/connected' ke metode index dari ConnectedController
 Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
 
+Route::get('/landing-page', function () {
+    return view('pages.frontsite.landing-page.index');
+})->middleware('auth')->name('landing-page');
 
-
+Route::get('/admin', function () {
+    return view('pages.frontsite.admin.index');
+})->middleware('auth')->name('admin.dashboard');
 

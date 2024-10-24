@@ -119,12 +119,12 @@
                                 <div class="ring-1 ring-[#0D63F3] ring-offset-4 rounded-full">
                                     <img
                                         class="inline-block h-14 w-14 rounded-full"
-                                        src="{{ asset('/assets/frontsite/images/Alumni-1.jpeg') }}"
+                                        src="{{ asset('/assets/frontsite/images/foto4.png') }}"
                                         alt=""
                                     />
                                 </div>
                                 <div class="ml-5">
-                                    <p class="font-medium text-[#1E2B4F]">Sahala</p>
+                                    <p class="font-medium text-[#1E2B4F]">Suprianto</p>
                                     <p class="text-sm text-[#AFAEC3]">Programmer</p>
                                 </div>
                             </div>
