@@ -148,6 +148,10 @@
         <h3>Menampilkan 3 dari 3 laporan</h3>
         <p>data aduan masuk dari user</p>
 
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Beranda</h1>
+        <p>This is your admin dashboard. Manage your site from here.</p>
+
         <div class="table-responsive small">
             <table class="table table-striped table-sm">
               <thead>
