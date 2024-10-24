@@ -113,10 +113,18 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
-        <a href="#">Beranda</a>
-        <a href="#">Report Data</a>
-        <a href="#">Delete</a>
-        <a href="#">Pengaturan</a>
+        <a href="/admin">Beranda</a>
+        <a href="/report">Report Data</a>
+        <a href="/delete">Delete</a>
+        <a href="/pengaturan">Pengaturan</a>
+        <a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            class="sign-out">
+            Sign out
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
 
     <!-- Main content -->

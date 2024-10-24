@@ -13,6 +13,7 @@ use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ConnectedController;
 
+
 // Mengarahkan root '/' ke metode index dari LandingController
 Route::get('/', [LandingController::class, 'index'])->name('index');
 
