@@ -123,8 +123,8 @@
             </div>
         </div>
 
-        {{-- tambahkan gambar buttonadd.png sebagai button mengambang di sisi kanan bawah --}}
-        @if(Auth::check())
+        {{-- tambahkan gambar buttonadd.png sebagai button mengambang di sisi kanan bawah
+        @if(Auth::check()) --}}
         <a href="#" class="fixed bottom-0 right-0 m-4" onclick="toggleTestimoniForm(event)">
             <img src="{{ asset('/assets/frontsite/images/buttonadd.png') }}" alt="Add Testimoni" class="w-16 h-16">            
         </a>
@@ -136,13 +136,13 @@
             <form>
                 <div class="space-y-4">
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Job" type="text"/>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
                 </div>
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Study Program" type="text"/>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Program Studi" type="text"/>
                 </div>
                 <div>
-                    <select class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" placeholder="Force">
+                    <select class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" placeholder="Angkatan">
                     <option value="" disabled selected>Angkatan</option>
                     @for ($year = 2000; $year <= date('Y'); $year++)
                         <option value="{{ $year }}">{{ $year }}</option>
@@ -150,7 +150,7 @@
                     </select>
                 </div>
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Headline" type="text"/>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul Utama" type="text"/>
                 </div>
                 <div>
                     <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
@@ -170,7 +170,7 @@
             testimoniForm.classList.toggle('hidden');
             }
         </script>
-        @endif
+        
     </div>
 </body>
 @endsection
