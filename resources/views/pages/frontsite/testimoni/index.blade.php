@@ -131,33 +131,34 @@
 
         {{-- Form Testimoni Pop-up --}}
         <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-1/2"> <!-- Adjusted width to be wider -->
             <h2 class="text-2xl font-bold mb-4">Add Testimoni</h2>
             <form>
-            <div class="mb-4">
-            <label for="job" class="block text-sm font-medium text-gray-700">Job</label>
-            <input type="text" name="job" id="job" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
-            </div>
-            <div class="mb-4">
-            <label for="study_program" class="block text-sm font-medium text-gray-700">Study Program</label>
-            <input type="text" name="study_program" id="study_program" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
-            </div>
-            <div class="mb-4">
-            <label for="force" class="block text-sm font-medium text-gray-700">Force</label>
-            <input type="text" name="force" id="force" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
-            </div>
-            <div class="mb-4">
-            <label for="headline" class="block text-sm font-medium text-gray-700">Headline</label>
-            <input type="text" name="headline" id="headline" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
-            </div>
-            <div class="mb-4">
-            <label for="video_link" class="block text-sm font-medium text-gray-700">Video Link</label>
-            <input type="url" name="video_link" id="video_link" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
-            </div>
-            <div class="flex justify-end">
-            <button type="button" class="mr-4 text-gray-500" onclick="toggleTestimoniForm(event)">Cancel</button>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
-            </div>
+                <div class="space-y-4">
+                <div>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Job" type="text"/>
+                </div>
+                <div>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Study Program" type="text"/>
+                </div>
+                <div>
+                    <select class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" placeholder="Force">
+                    <option value="" disabled selected>Angkatan</option>
+                    @for ($year = 2000; $year <= date('Y'); $year++)
+                        <option value="{{ $year }}">{{ $year }}</option>
+                    @endfor
+                    </select>
+                </div>
+                <div>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Headline" type="text"/>
+                </div>
+                <div>
+                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
+                </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
+                </div>
             </form>
             </div>
         </div>
