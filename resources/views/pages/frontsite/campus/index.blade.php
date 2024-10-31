@@ -20,6 +20,74 @@
         </div>
 
 
+         <!--  Ptodi -->
+         <section style="background-color: rgba(82, 95, 225, 0.1);">
+            <div class="mx-auto max-w-7xl px-4 lg:px-14 py-16">
+                <h3 class="text-3xl font-semibold">Program Studi</h3>
+                <p class="text-[#A7B0B5] mt-2">Institut Teknologi Del</p>
+        
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-10">
+                    <!-- Cards without database data -->
+                    <a href="https://s1si.del.ac.id/" class="bg-white py-10 px-8 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/SIItdel.png') }}" alt="Sistem Informasi" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Sistem Informasi</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Informatika & Teknik Elektro</p>
+                    </a>
+        
+                    <a href="https://www.instagram.com/hme_itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/TEItdel.jpeg') }}" alt="Teknik Elektro" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Teknik Elektro</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Informatika & Teknik Elektro</p>
+                    </a>
+
+                    {{-- add more cards without database --}}
+                    <a href="https://himasti.delcom.org/" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                        <img src="{{ asset('/assets/frontsite/images/IFItdel.png') }}" alt="Informatika" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Informatika</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Informatika & Teknik Elektro</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/himatera_del/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/TRPLItdel.jpg') }}" alt="Teknologi Rekayasa Perangkat Lunak" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">D4 Teknologi Rekayasa Perangkat Lunak</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Vokasi</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/himatif.itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/TIItdel.jpeg') }}" alt="Teknologi Informasi" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">D3 Teknologi Informasi</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Vokasi</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/himatek.itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="Teknologi Komputer" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">D3 Teknologi Komputer</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Vokasi</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/himator_itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Teknik Bioproses</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Bioteknologi</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/himamera_itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/MRItdel.jpg') }}" alt="Manajemen Rekayasa" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Manajemen Rekayasa</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Teknologi Industri</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/metalurgidel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="" class="w-full object-contain rounded-t-2xl">
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Teknik Metalurgi</h5>
+                        <p class="text-[#AFAEC3] mt-1">Fakultas Teknologi Industri</p>
+                    </a>
+        
+
+                </div>
+            </div>
+        </section>
+
 
             </section>
             <div class="mx-auto max-w-7xl px-4 lg:px-14 py-16">
