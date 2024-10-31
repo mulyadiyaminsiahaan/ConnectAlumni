@@ -31,7 +31,7 @@
                     <div class="mt-12">
 
                         <!-- Form input -->
-                        <form method="POST" action="{{ route('register') }}" class="grid gap-6">
+                        <form method="POST" action="{{ route('post.register') }}" class="grid gap-6">
 
                             {{-- token here --}}
                             @csrf

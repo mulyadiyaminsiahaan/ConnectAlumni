@@ -9,6 +9,7 @@ class RedirectIfAuthenticated
 {
     public function handle($request, Closure $next, $guard = null)
     {
+
         if (Auth::check()) {
             $user = Auth::user();
             if ($user->usertype == 'admin') {

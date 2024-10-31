@@ -12,7 +12,15 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ConnectedController;
+use App\Http\Controllers\AuthController;
 
+Route::prefix('auth')->group(function () {
+    Route::get("/register", [AuthController::class, "getRegister"])->name("register");
+    Route::post("/register", [AuthController::class, "postRegister"])->name("post.register");
+    Route::get("/login", [AuthController::class, "getLogin"])->name("login");
+    Route::post("/login", [AuthController::class, "postLogin"])->name("post.login");
+    Route::get("/logout", [AuthController::class, "getlogout"])->name("logout");
+});
 
 // Mengarahkan root '/' ke metode index dari LandingController
 Route::get('/', [LandingController::class, 'index'])->name('index');

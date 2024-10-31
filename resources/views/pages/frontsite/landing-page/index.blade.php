@@ -7,6 +7,12 @@
     <!-- Content -->
     <main class="min-h-screen">
 
+        {{-- @if(Auth::check())
+            <script>
+                window.location.href = "{{ route('index') }}";
+            </script>
+        @endif --}}
+
         <!-- Hero -->
         <section class="relative mt-12">
             <!-- Hero Image -->

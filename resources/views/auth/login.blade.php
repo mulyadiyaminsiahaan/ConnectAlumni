@@ -33,7 +33,7 @@
                         @endif
 
                         <!-- Form input -->
-                        <form method="POST" action="{{ route('login') }}" class="grid gap-6">
+                        <form method="POST" action="{{ route('post.login') }}" class="grid gap-6">
 
                             {{-- token here --}}
                             @csrf
@@ -42,7 +42,7 @@
                                 <input
                                     for="email" type="email" id="email" name="email"
                                     class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
-                                    placeholder="Email Address" value="{{ old('email') }}" required autofocus
+                                    placeholder="Email Address" value="{{ old('email', Cookie::get('email')) }}" required autofocus
                                 />
 
                                 @if ($errors->has('email'))
@@ -54,7 +54,7 @@
                                 <input
                                     for="password" type="password" id="password" name="password"
                                     class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
-                                    placeholder="Password"
+                                    placeholder="Password" value="{{ old('password', Cookie::get('password')) }}"
                                 />
 
                                 @if ($errors->has('password'))
@@ -62,7 +62,15 @@
                                 @endif
                             </label>
 
-                            <div class="mt-10 grid gap-6">
+                            <div class="block mt-4">
+                                <label for="remember" class="flex items-center">
+                                    <input id="remember" type="checkbox" class="form-checkbox" name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember Me') }}</span>
+                                </label>
+                            </div>
+                                
+
+                            <div class="mt-2 grid gap-6"> <!-- Ubah mt-3 menjadi mt-2 untuk mendekatkan jarak -->
                                 <button class="text-center text-white text-lg font-medium bg-[#0D63F3] px-10 py-4 rounded-full">
                                     Sign In
                                 </button>

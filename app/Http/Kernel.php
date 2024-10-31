@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+    
     /**
      * The application's global HTTP middleware stack.
      *
@@ -39,6 +40,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             // take this middleware here
             \App\Http\Middleware\AuthGates::class,
+            \App\Http\Middleware\Remember::class,
         ],
 
         'api' => [
