@@ -156,8 +156,9 @@
                     <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
                 </div>
                 </div>
-                <div class="mt-6 flex justify-end">
-                <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
+                <div class="mt-6 flex justify-end space-x-4">
+                    <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleTestimoniForm(event)">Cancel</button>
+                    <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
                 </div>
             </form>
             </div>
