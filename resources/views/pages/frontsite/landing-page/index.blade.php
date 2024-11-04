@@ -18,11 +18,11 @@
             <!-- Hero Image -->
             <div class="hidden lg:block lg:absolute lg:z-10 lg:top-0 lg:right-0"
             aria-hidden="true">
-                <img src="{{ asset('/assets/frontsite/images/hero-image1.png') }}" class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Hero Image"/>
+                <img src="{{ asset('/assets/frontsite/images/hero-image1.png') }}" class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Heroz Image"/>
                 <div class="text-center absolute bottom-0 -left-20 -translate-y-14 bg-white px-7 py-5 rounded-xl shadow-2xl">
                     <h5 class="font-medium text-[#1E2B4F]">Johannes</h5>
                     <p class="text-xs text-[#AFAEC3] mt-1">Programmer</p>
-                    <span class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</span>
+                    <a href="{{ route('connected.index') }}" class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</a>
                 </div>
             </div>
 
@@ -136,11 +136,12 @@
                 <!-- Static Alumni Cards without database data -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
                     {{-- alumni 1 --}}
-                    <a href="#" class="group">
+                    <a href="{{ route('connected.index') }}"  class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
                             <img src="{{ asset('/assets/frontsite/images/foto1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                                 <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                                
                             </div>
                         </div>
 
@@ -159,7 +160,7 @@
                     <!-- Add more static Alumni cards as needed -->
 
                     {{-- alumni 2--}}
-                    <a href="#" class="group">
+                    <a href="{{ route('connected.index') }}"  class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
                             <img src="{{ asset('/assets/frontsite/images/foto2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
@@ -179,7 +180,7 @@
                         </div>
                     </a>
                     {{-- alumni 3 --}}
-                    <a href="#" class="group">
+                    <a href="{{ route('connected.index') }}"  class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
                             <img src="{{ asset('/assets/frontsite/images/foto3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
@@ -199,7 +200,7 @@
                         </div>
                     </a>
                     {{-- orang 4 --}}
-                    <a href="#" class="group">
+                    <a href="{{ route('connected.index') }}"  class="group">
                         <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
                             <img src="{{ asset('/assets/frontsite/images/foto4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Alumni Name">
                             <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">

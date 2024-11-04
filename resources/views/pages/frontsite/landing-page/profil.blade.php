@@ -16,7 +16,7 @@
             <div class="relative">
                 <img alt="Profile picture of Ferry Panjaitan" class="w-48 h-48 rounded-full border-4 border-blue-500" src="{{ asset('/assets/frontsite/images/foto1.png') }}" />
             </div>
-            {{-- <button class="bg-white text-blue-500 px-4 py-1 rounded-full border border-blue-500 mt-4">Edit Foto</button> --}}
+            <button class="bg-white text-blue-500 px-4 py-1 rounded-full border border-blue-500 mt-4">Edit Foto</button>
         </div>
         <div class="w-2/3 bg-white p-8 rounded-lg shadow-lg">
             <h2 class="text-gray-500 text-lg">Profile</h2>
@@ -49,12 +49,7 @@
                 </div>
             </div>
             <div class="flex justify-end mt-8">
-                <a href="https://www.instagram.com/iadelofc/profilecard/?igsh=bHNoMDQ1eHlrODJz" class="ml-4">
-                    <img src="{{ asset('/assets/frontsite/images/instagram.svg') }}" alt="Instagram" class="w-8 h-8">
-                </a>
-                <a href="#" class="ml-4">
-                    <img src="{{ asset('/assets/frontsite/images/whatsapp.svg') }}" alt="WhatsApp" class="w-8 h-8">
-                </a>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Edit Profile</button>
             </div>
             </div>
         </div>

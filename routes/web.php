@@ -13,6 +13,7 @@ use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ConnectedController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfilController;
 
 Route::prefix('auth')->group(function () {
     Route::get("/register", [AuthController::class, "getRegister"])->name("register");
@@ -53,6 +54,9 @@ Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengatu
 
 // Mengarahkan '/admin/connected' ke metode index dari ConnectedController
 Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
+
+// Mengarahkan '/landing-page/profil' ke metode index dari ProfilController
+Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
 
 Route::get('/landing-page', function () {
     return view('pages.frontsite.landing-page.index');

@@ -139,16 +139,19 @@
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <img src="http://127.0.0.1:8000/assets/frontsite/images/logo.png" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
-        <a href="http://127.0.0.1:8000/admin">Beranda</a>
+        <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-9 w-38 h-auto" style="width: 200px; height: auto; position: relative; right: -15px;">
+        <a href="{{ route('admin.dashboard') }}">Beranda</a>
         <a href="/report">Report Data</a>
         <a href="/delete">Delete</a>
         <a href="/pengaturan">Pengaturan</a>
-        <a href="http://127.0.0.1:8000/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="sign-out">
+        <a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            class="sign-out">
             Log out
         </a>
-        <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
-            <input type="hidden" name="_token" value="Ru4VyNVtVoR8RHSEJA8fqqV5aXTqmtK5zsT3EKvb" autocomplete="off">        </form>
+        <form id="logout-form" action="{{ route('logout') }}" style="display: none;">
+            @csrf
+        </form>
     </div>
 
     <!-- Main content -->

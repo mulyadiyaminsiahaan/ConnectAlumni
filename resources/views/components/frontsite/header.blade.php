@@ -1,5 +1,5 @@
 <!-- Header -->
-<nav x-data="{ navbarMobileOpen: false }" class="bg-[#525FE1] bg-opacity-10">
+<nav x-data="{ navbarMobileOpen: false }" class="bg-[#ffffff] bg-opacity-10">
     <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-6 lg:py-10">
         <div class="flex justify-between h-16">
             <div class="flex flex-auto justify-between">
@@ -170,7 +170,7 @@
                                 >Dashboard</a
                             >
                             <a
-                                href="#"
+                                href="{{ route('profil') }}"
                                 class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
                                 role="menuitem"
                                 tabindex="-1"
