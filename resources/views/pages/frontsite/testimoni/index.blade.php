@@ -133,16 +133,17 @@
         <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
             <div class="bg-white p-8 rounded-lg shadow-lg w-1/2"> <!-- Adjusted width to be wider -->
             <h2 class="text-2xl font-bold mb-4">Add Testimoni</h2>
-            <form>
+            <form action="{{ route('testimoni.store') }}" method="POST">
+                @csrf
                 <div class="space-y-4">
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
+                    <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
                 </div>
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Program Studi" type="text"/>
+                    <input name="program_studi"class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Program Studi" type="text"/>
                 </div>
                 <div>
-                    <select class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" placeholder="Angkatan">
+                    <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" placeholder="Angkatan">
                     <option value="" disabled selected>Angkatan</option>
                     @for ($year = 2000; $year <= date('Y'); $year++)
                         <option value="{{ $year }}">{{ $year }}</option>
@@ -150,16 +151,22 @@
                     </select>
                 </div>
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul Utama" type="text"/>
+                    <input name="judul_utama" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul Utama" type="text"/>
                 </div>
                 <div>
-                    <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
+                    <input name="link_video" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
                 </div>
                 </div>
                 <div class="mt-6 flex justify-end space-x-4">
                     <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleTestimoniForm(event)">Cancel</button>
                     <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
+                    @if (session('success'))
+                        <div class="bg-green-500 text-white p-4 rounded-lg mb-4">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 </div>
+
             </form>
             </div>
         </div>

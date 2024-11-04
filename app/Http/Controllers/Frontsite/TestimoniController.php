@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontsite;
 
 use App\Http\Controllers\Controller;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
 class TestimoniController extends Controller
@@ -13,6 +14,27 @@ class TestimoniController extends Controller
     public function index()
     {
         return view('pages.frontsite.testimoni.index');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'pekerjaan' => 'required|string|max:255',
+            'program_studi' => 'required|string|max:255',
+            'angkatan' => 'required|string|max:4',
+            'judul_utama' => 'required|string|max:255',
+            'link_video' => 'required|url',
+        ]);
+
+        Testimoni::create([
+            'pekerjaan' => $request->pekerjaan,
+            'program_studi' => $request->program_studi,
+            'angkatan' => $request->angkatan,
+            'judul_utama' => $request->judul_utama,
+            'link_video' => $request->link_video,
+        ]);
+
+        return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
     }
 
     /**

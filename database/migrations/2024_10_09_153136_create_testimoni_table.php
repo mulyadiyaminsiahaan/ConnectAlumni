@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('testimoni', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->index('fk_testimoni_to_users');
-            $table->string('link_video_youtube')->nullable();
-            $table->string('job')->nullable();
-            $table->string('study_program')->nullable();
-            $table->string('force')->nullable();
-            $table->string('headline')->nullable();
+            $table->string('pekerjaan');
+            $table->string('program_studi');
+            $table->string('angkatan');
+            $table->string('judul_utama');
+            $table->string('link_video');
             $table->timestamps();
             $table->softDeletes();
         });
