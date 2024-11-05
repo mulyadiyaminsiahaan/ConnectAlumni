@@ -31,6 +31,8 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 
 // Mengarahkan '/testimoni' ke metode show dari TestimoniController
 Route::get('/testimoni', [TestimoniController::class, 'index'])->name('testimoni.index');
+// Mengarahkan '/testimoni' ke metode store dari TestimoniController
+Route::post('/testimoni', [TestimoniController::class, 'store'])->name('testimoni.store');
 
 // Mengarahkan '/campus' ke metode index dari CampusController
 Route::get('/campus', [CampusController::class, 'index'])->name('campus.index');

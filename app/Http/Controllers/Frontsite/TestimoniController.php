@@ -13,7 +13,9 @@ class TestimoniController extends Controller
      */
     public function index()
     {
-        return view('pages.frontsite.testimoni.index');
+        $testimoni = Testimoni::all();
+
+        return view('pages.frontsite.testimoni.index', compact('testimoni'));
     }
 
     public function store(Request $request)
