@@ -89,7 +89,18 @@
                             <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
                         </div>
                         <div>
-                            <input name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Program Studi" type="text"/>
+                            <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
+                                <option value="" disabled selected>S1 Program Studi</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Informatika">Informatika</option>
+                                <option value="Teknik Elektro">Teknik Elektro</option>
+                                <option value="Manajemen Rekayasa">Manajemen Rekayasa</option>
+                                <option value="Metalurgi">Metalurgi</option>
+                                <option value="Bioproses">Bioproses</option>
+                                <option value="D3 Teknologi Informasi">D3 Teknologi Informasi</option>
+                                <option value="D3 Teknik Elektro">D3 Teknik Elektro</option>
+                                <option value="D4 Rekayasa Perangkat Lunak">D4 Rekayasa Perangkat Lunak</option>
+                            </select>
                         </div>
                         <div>
                             <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">

@@ -76,7 +76,11 @@
 
                         <!-- CTA Button -->
                         <div class="grid lg:flex flex-wrap mt-4 gap-5">
-                            <a href="{{ route('register') }}" class="text-white text-lg font-medium text-center bg-[#0D63F3] rounded-full px-12 py-3">Sign Up</a>
+                            @if(Auth::check())
+                                <span class="text-lg font-medium text-center text-[#0D63F3] italic">Buat Testimoni untuk meningkatkan Kampusmu</span>
+                            @else
+                                <a href="{{ route('register') }}" class="text-white text-lg font-medium text-center bg-[#0D63F3] rounded-full px-12 py-3">Sign Up</a>
+                            @endif
                         </div>
                         <!-- CTA Button -->
 
