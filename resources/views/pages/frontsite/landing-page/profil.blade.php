@@ -1,4 +1,3 @@
-// resources/views/profile.blade.php
 @extends('layouts.default')
 
 @section('title', 'Profil')
@@ -15,14 +14,18 @@
         </style>
         <div class="w-1/3 flex flex-col items-center">
             <div class="relative">
-                <img alt="Profile picture of" class="w-48 h-48 rounded-full border-4 border-blue-500" src="{{ $user->image ? asset('storage/' . $user->image) : asset('/assets/frontsite/images/foto1.png') }}" />
+                <img class="w-48 h-48 rounded-full border-4 border-blue-500" src="{{ asset('storage/' . $user->photo) }}" alt="Profile Photo">
             </div>
-            <button class="bg-white text-blue-500 px-4 py-1 rounded-full border border-blue-500 mt-4">Edit Foto</button>
         </div>
+
         <div class="w-2/3 bg-white p-8 rounded-lg shadow-lg">
             <h2 class="text-gray-500 text-lg">Profile</h2>
             <h1 class="text-4xl font-bold text-gray-800 mt-2">About Me</h1>
-            <p class="text-gray-700 mt-4">{{ $user->about }}</p>
+            <div class="text-gray-700 mt-4 text-justify">
+                <p>
+                    {{ $user->about }}
+                </p>
+            </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
                 <div>
                     <p class="text-gray-500">Full Name</p>
@@ -50,7 +53,7 @@
                 </div>
             </div>
             <div class="flex justify-end mt-8">
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Edit Profile</button>
+                <a href="{{ route('editprofil') }}" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Edit Profile</a>
             </div>
         </div>
     </main>

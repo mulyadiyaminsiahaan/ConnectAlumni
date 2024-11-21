@@ -106,4 +106,4 @@ class User extends Authenticatable
         //2 parameter (path model, field foreign key)
         return $this->hasMany('App\Models\ManagementAccsess\RoleUser', 'user_id');
     }
-}
+} 
