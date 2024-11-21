@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ProfilController extends Controller
 {
@@ -33,9 +35,13 @@ class ProfilController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        // Get the currently authenticated user
+        $user = Auth::user();
+
+        // Return the profile view with the user data
+        return view('pages.frontsite.landing-page.profil', compact('user'));
     }
 
     /**

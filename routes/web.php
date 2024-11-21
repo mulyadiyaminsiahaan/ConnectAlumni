@@ -61,7 +61,12 @@ Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengatu
 Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
 
 // Mengarahkan '/landing-page/profil' ke metode index dari ProfilController
-Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+// Mengarahkan '/profil' ke metode show dari ProfilController
+// routes/web.php
+Route::get('/profil', [ProfilController::class, 'show'])->name('profil')->middleware('auth');
+
+
+
 
 Route::get('/landing-page', function () {
     return view('pages.frontsite.landing-page.index');

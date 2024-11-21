@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('usertype')->default('user'); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->longText('about')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('job')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('status')->nullable();
+            $table->date('birth_of_date')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
