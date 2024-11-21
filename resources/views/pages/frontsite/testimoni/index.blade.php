@@ -24,7 +24,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .play-button {
+        /* .play-button {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -32,13 +32,19 @@
             font-size: 2rem;
             color: rgba(255, 255, 255, 0.9);
             transition: transform 0.2s;
-        }
+        } */
 
-        .video-image:hover .play-button {
-            transform: translate(-50%, -50%) scale(1.2);
+        iframe {
+            width: 560px;
+            height: 315px;
+            border-radius: 0.5rem;
+            border: none;
         }
+        .video-card div {
+    margin-left: 1.5rem; /* Atur jarak sesuai kebutuhan */
+}
 
-        .video-image {
+        /*.video-image {
             position: relative;
             margin-right: 1rem;
         }
@@ -47,7 +53,7 @@
             width: 400px !important;
             height: 300px !important;
             object-fit: cover;
-        }
+        } */
     </style>
 </head>
 
@@ -58,11 +64,18 @@
 
         @foreach($testimoni as $testimoni)
             <div class="video-card">
-                <div class="video-image">
-                    <img src="{{ asset('/assets/frontsite/images/wisudawan1.jpg') }}" alt="Video Thumbnail" class="rounded-lg">
-                    <span class="play-button">▶</span>
-                </div>
-                <div>
+                @if (str_contains($testimoni['link_video'], 'youtube.com') || str_contains($testimoni['link_video'], 'youtu.be'))
+                @php
+                    $videoId = str_contains($testimoni['link_video'], 'youtube.com') 
+                        ? explode('v=', $testimoni['link_video'])[1] 
+                        : explode('/', $testimoni['link_video'])[3];
+                    $embedUrl = "https://www.youtube.com/embed/" . explode('&', $videoId)[0];
+                @endphp
+                <iframe src="{{ $embedUrl }}" allowfullscreen></iframe>
+            @else
+                <p class="text-red-500">Link video tidak valid atau belum didukung.</p>
+            @endif
+                <div class="ml-6">
                     <h4 class="mt-4 text-lg font-medium text-[#1E2B4F]">{{ $testimoni['judul_utama'] }}</h4>
                     <p class="text-sm text-[#AFAEC3]"><em>{{ $testimoni['pekerjaan'] }}</em></p>
                     <p class="text-xs text-gray-500">{{ $testimoni['program_studi'] }} {{ $testimoni['angkatan'] }}</p>
