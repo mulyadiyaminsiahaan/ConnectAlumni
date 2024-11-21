@@ -181,20 +181,19 @@
         <h2>ubah pengaturan profil anda</h2>
     
     <form style="margin-top: 75px;">
-        <label for="username">Username</label><p>
-        <input type="text" id="username" placeholder="Username"><P>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Username">
 
-        <label for="phone">Nomor Telepon</label><P>
-        <input type="text" id="phone" placeholder="Nomor Telepon"><P>
+        <label for="phone">Nomor Telepon</label>
+        <input type="text" id="phone" placeholder="Nomor Telepon">
 
-        <label for="new-password">Password Baru</label><P>
-        <input type="password" id="new-password" placeholder="Password Baru"><P>
+        <label for="new-password">Password Baru</label>
+        <input type="password" id="new-password" placeholder="Password Baru">
             
-        <p><div style="text-align: center;">
-        Ubah Password Anda?</p>
+        <div style="text-align: center;">
+        Ubah Password Anda?
         <button type="submit">Ganti Password</button>
-        <p>
-        <button type="submit">Cancel</button><p>
+        <button type="submit">Cancel</button>
     </form>
 </div>
 

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Frontsite;
 
-use App\Http\Controllers\Controller;
+use GuzzleHttp\Client;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 
 class TestimoniController extends Controller
 {
@@ -13,9 +15,19 @@ class TestimoniController extends Controller
      */
     public function index()
     {
-        $testimoni = Testimoni::all();
+        $client = new Client();
+        $url = "http://127.0.0.1:8001/api/testimoni";
+        $response = $client->request('GET', $url);
 
-        return view('pages.frontsite.testimoni.index', compact('testimoni'));
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+
+        // print_r($contentArray['data']);
+
+
+        return view('pages.frontsite.testimoni.index', [
+            'testimoni' => $contentArray['data'],
+        ]);
     }
 
     public function store(Request $request)
@@ -28,7 +40,7 @@ class TestimoniController extends Controller
             'link_video' => 'required|url',
         ]);
 
-        Testimoni::create([
+        $response = Http::post("http://127.0.0.1:8001/api/posttestimoni",[
             'pekerjaan' => $request->pekerjaan,
             'program_studi' => $request->program_studi,
             'angkatan' => $request->angkatan,
@@ -36,47 +48,72 @@ class TestimoniController extends Controller
             'link_video' => $request->link_video,
         ]);
 
-        return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    // Menghapus testimoni berdasarkan id testimoni nya
+
+    public function deleteTestimoni($id)
     {
-        return abort(404);
+        $response = Http::delete('http://127.0.0.1:8001/api/deletetestimoni'. $id);
+
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
 
+    // Tampilkan testimoni yang akan di edit (Menampilkan data berdasarkan id)
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function showUpdate($id)
     {
-        return abort(404);
+        $client = new Client();
+        $url = "http://127.0.0.1:8001/api/testimoni". $id;
+        $response = $client->request('GET', $url);
+
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+
+        // print_r($contentArray['data']);
+
+
+        return view('pages.frontsite.testimoni.index', [
+            'testimoni' => $contentArray['data'],
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+
+    public function updateTestimoni(Request $request, $id)
     {
-        return abort(404);
+        $request->validate([
+            'pekerjaan' => ['sometimes','string','max:255'],
+            'program_studi' => ['sometimes','string','max:255'],
+            'angkatan' => ['sometimes','string','max:4'],
+            'judul_utama' => ['sometimes','string','max:255'],
+            'link_video' => ['sometimes','url'],
+        ]);
+
+        $response = Http::post("http://127.0.0.1:8001/api/updatetestimoni". $id,[
+            'pekerjaan' => $request->input('pekerjaan'),
+            'program_studi' => $request->input('program_studi'),
+            'angkatan' => $request->input('angkatan'),
+            'judul_utama' => $request->input('judul_utama'),
+            'link_video' => $request->input('link_video'),
+        ]);
+
+                if ($response->successful()) {
+            return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        return abort(404);
-    }
 }

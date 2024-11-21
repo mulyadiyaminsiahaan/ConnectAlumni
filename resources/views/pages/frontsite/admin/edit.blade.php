@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
+    <title>Pengaturan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
@@ -48,6 +48,45 @@
             color: #f56e07;
         }
 
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        form input,
+        form button,
+        form select {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 0px;
+            border-radius: 25px;
+            box-sizing: border-box;
+            /* Ensure padding and border are included in the width and height */
+        }
+
+        form input {
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #5358e9;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #4347d7;
+        }
+
+
         /* Main content */
         .main-content {
             margin-left: 250px;
@@ -69,6 +108,11 @@
             font-size: 24px;
         }
 
+        .main-content h2 {
+            font-size: 14px;
+            color: gray;
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -84,26 +128,6 @@
             font-size: 14px;
             color: gray;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table th,
-        table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        table th {
-            color: #000000;
-            font-weight: normal;
-        }
-
-
 
         /* Tombol toggle sidebar */
         .toggle-btn {
@@ -171,51 +195,55 @@
     <!-- Main content -->
     <div class="main-content" id="mainContent">
         <button class="toggle-btn" onclick="toggleSidebar()">
-            <span class="toggle-icon">☰</span> <span class="bold-text">Delete</span>
+            <span class="toggle-icon">☰</span> <span class="bold-text">Edit</span>
         </button>
+        <h2>Ubah data Testimoni Anda</h2>
+        <form action="{{ route('delete.update', $testimoni['id']) }}" enctype="multipart/form-data" method="post">
+            @csrf
+            @method('PUT')
 
-        <div class="container">
-            <div class="header">
-                <div class="left">Menampilkan 3 dari 3 laporan</div>
-                <div class="right">Cari nama pelapor</div>
-            </div>
+            <!-- Input Pekerjaan -->
+            <label for="pekerjaan">Pekerjaan</label>
+            <input type="text" id="pekerjaan" value="{{ $testimoni['pekerjaan'] }}" name="pekerjaan">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th width="5%">#</th>
-                        <th width="15%">Dari</th>
-                        <th width="10%">Pekerjaan</th>
-                        <th width="10%">Program Studi</th>
-                        <th width="10%">Angkatan</th>
-                        <th width="10%">Judul</th>
-                        <th width="20%">Link Video</th>
-                        <th width="20%">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($testimoni as $testimoni)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>#</td>
-                        <td>{{ $testimoni['pekerjaan'] }}</td>
-                        <td>{{ $testimoni['program_studi'] }}</td>
-                        <td>{{ $testimoni['angkatan'] }}</td>
-                        <td>{{ $testimoni['judul_utama'] }}</td>
-                        <td>{{ $testimoni['link_video'] }}</td>
-                        <td>
-                            <a href="{{ route('delete.showupdate', $testimoni['id']) }}"><button type="button" class="btn btn-info rounded-pill">Edit</button></a>
-                            <form action="{{ route('delete.delete', $testimoni['id']) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Testimoni ini?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+            <!-- Dropdown Program Studi -->
+            <label for="program_studi">Program Studi</label>
+            <select id="program_studi" name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
+                <option value="" disabled selected>Pilih Program Studi</option>
+                <option value="Sistem Informasi" {{ $testimoni['program_studi'] == 'Sistem Informasi' ? 'selected' : '' }}>S1 Sistem Informasi</option>
+                <option value="Informatika" {{ $testimoni['program_studi'] == 'Informatika' ? 'selected' : '' }}>S1 Informatika</option>
+                <option value="Teknik Elektro" {{ $testimoni['program_studi'] == 'Teknik Elektro' ? 'selected' : '' }}>S1 Teknik Elektro</option>
+                <option value="Manajemen Rekayasa" {{ $testimoni['program_studi'] == 'Manajemen Rekayasa' ? 'selected' : '' }}>S1 Manajemen Rekayasa</option>
+                <option value="Metalurgi" {{ $testimoni['program_studi'] == 'Metalurgi' ? 'selected' : '' }}>S1 Metalurgi</option>
+                <option value="Bioproses" {{ $testimoni['program_studi'] == 'Bioproses' ? 'selected' : '' }}>S1 Bioproses</option>
+                <option value="D3 Teknologi Informasi" {{ $testimoni['program_studi'] == 'D3 Teknologi Informasi' ? 'selected' : '' }}>D3 Teknologi Informasi</option>
+                <option value="D3 Teknik Elektro" {{ $testimoni['program_studi'] == 'D3 Teknik Elektro' ? 'selected' : '' }}>D3 Teknik Elektro</option>
+                <option value="D4 Rekayasa Perangkat Lunak" {{ $testimoni['program_studi'] == 'D4 Rekayasa Perangkat Lunak' ? 'selected' : '' }}>D4 Rekayasa Perangkat Lunak</option>
+            </select>
+
+            <!-- Dropdown Angkatan -->
+            <label for="angkatan">Angkatan</label>
+            <select id="angkatan" name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
+                <option value="" disabled selected>Pilih Angkatan</option>
+                @for ($year = 2000; $year <= date('Y'); $year++) <!-- Dinamis -->
+                    <option value="{{ $year }}" {{ $testimoni['angkatan'] == $year ? 'selected' : '' }}>{{ $year }}</option>
+                    @endfor
+            </select>
+
+            <!-- Input Judul Utama -->
+            <label for="judul_utama">Judul Utama</label>
+            <input type="text" id="judul_utama" name="judul_utama" value="{{ $testimoni['judul_utama'] }}" placeholder="Judul Utama">
+
+            <!-- Input Link Video -->
+            <label for="link_video">Link Video</label>
+            <input type="url" id="link_video" name="link_video" value="{{ $testimoni['link_video'] }}" placeholder="Link Video">
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </form>
+
+
+    </div>
 
 </body>
 

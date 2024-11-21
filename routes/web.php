@@ -50,6 +50,9 @@ Route::get('/report', [ReportController::class, 'index'])->name('report.index');
 
 // Mengarahkan '/admin/delete' ke metode index dari DeleteController
 Route::get('/delete', [DeleteController::class, 'index'])->name('delete.index');
+Route::get('/delete/{id}', [DeleteController::class, 'showUpdate'])->name('delete.showupdate');
+Route::put('/updatedelete/{id}', [DeleteController::class, 'updateTestimoni'])->name('delete.update');
+Route::delete('/delete/{id}', [DeleteController::class, 'deleteTestimoni'])->name('delete.delete');
 
 // Mengarahkan '/admin/pengaturan' ke metode index dari PengaturanController
 Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
