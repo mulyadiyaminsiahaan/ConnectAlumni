@@ -55,4 +55,17 @@ class ReportController extends Controller
             return redirect()->back()->with('error', 'Gagal mengirim laporan. Silakan coba lagi.');
         }
     }
+
+    public function destroy($id)
+    {
+        $response = Http::delete('http://127.0.0.1:8001/api/deletereports/'. $id);
+
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
+        }
+    }
+
+
 }

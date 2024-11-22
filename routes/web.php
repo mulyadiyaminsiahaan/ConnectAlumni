@@ -53,6 +53,8 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 // Mengarahkan '/admin/report' ke metode index dari ReportController
 Route::get('/report', [ReportController::class, 'index'])->name('report.index');
+Route::delete('/deletereport/{id}', [ReportController::class, 'destroy'])->name('report.delete');
+    
 
 // Mengarahkan '/admin/delete' ke metode index dari DeleteController
 Route::get('/delete', [DeleteController::class, 'index'])->name('delete.index');
@@ -81,4 +83,3 @@ Route::get('/landing-page', function () {
 Route::get('/admin', function () {
     return view('pages.frontsite.admin.index');
 })->middleware('auth')->name('admin.dashboard');
-

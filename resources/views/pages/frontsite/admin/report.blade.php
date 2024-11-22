@@ -200,7 +200,7 @@
                     <td>{{ $report['alasan'] }}</td>
                     <td>{{ $report['waktu'] }}</td>
                     <td>
-                        <form action="{{ route('delete.delete', $report['id']) }}" method="POST" style="display: inline;">
+                        <form action="{{ route('report.delete', $report['id']) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Report ini?')">Delete</button>
