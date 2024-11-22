@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
          body {
             margin: 0;
@@ -201,7 +202,7 @@
                     <td>{{ $report['alasan'] }}</td>
                     <td>{{ $report['waktu'] }}</td>
                     <td>
-                        <form action="{{ route('delete.delete', $testimoni['id']) }}" method="POST" style="display: inline;">
+                        <form action="{{ route('delete.delete', $report['id']) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Report ini?')">Delete</button>

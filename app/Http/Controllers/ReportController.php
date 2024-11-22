@@ -25,10 +25,10 @@ class ReportController extends Controller
         $contentArray = json_decode($content, true);
  
         // print_r($contentArray['data']);
- 
+
  
         return view('pages.frontsite.admin.report', [
-       'report' => $contentArray['data'],
+            'reports' => $contentArray['data'],
         ]);
     }
 

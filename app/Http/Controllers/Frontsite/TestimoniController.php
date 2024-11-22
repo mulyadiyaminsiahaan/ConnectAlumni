@@ -27,7 +27,7 @@ class TestimoniController extends Controller
 
         return view('pages.frontsite.testimoni.index', [
             'testimoni' => $contentArray['data'],
-        ]);
+        ]); 
     }
 
     public function store(Request $request)
@@ -55,7 +55,7 @@ class TestimoniController extends Controller
         }
     }
 
-    
+
 
     // Menghapus testimoni berdasarkan id testimoni nya
 
