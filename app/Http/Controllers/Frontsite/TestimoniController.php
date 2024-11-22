@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class TestimoniController extends Controller
@@ -27,7 +28,7 @@ class TestimoniController extends Controller
 
         return view('pages.frontsite.testimoni.index', [
             'testimoni' => $contentArray['data'],
-        ]); 
+        ]);
     }
 
     public function store(Request $request)
@@ -39,23 +40,26 @@ class TestimoniController extends Controller
             'judul_utama' => 'required|string|max:255',
             'link_video' => 'required|url',
         ]);
-
-        $response = Http::post("http://127.0.0.1:8001/api/posttestimoni",[
+    
+        // Mendapatkan user_id dari pengguna yang sedang login
+        $userId = Auth::id();
+    
+        $response = Http::post("http://127.0.0.1:8001/api/posttestimoni", [
+            'user_id' => $userId, // Menambahkan user_id 
             'pekerjaan' => $request->pekerjaan,
             'program_studi' => $request->program_studi,
             'angkatan' => $request->angkatan,
             'judul_utama' => $request->judul_utama,
             'link_video' => $request->link_video,
         ]);
-
+    
         if ($response->successful()) {
             return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
         } else {
             return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
         }
     }
-
-
+    
 
     // Menghapus testimoni berdasarkan id testimoni nya
 
@@ -115,5 +119,7 @@ class TestimoniController extends Controller
             return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
         }
     }
+
+    
 
 }

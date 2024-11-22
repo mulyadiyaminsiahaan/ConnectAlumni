@@ -181,10 +181,8 @@
                 <div class="right">
                     <!-- Form pencarian -->
                     <form action="{{ route('delete.index') }}" method="GET" class="d-inline">
-                        <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request('search') }}">
-                            <button type="submit" class="btn btn-primary">Cari</button>
-                        </div>
+                        <input type="text" name="search" class="form-control d-inline" style="width: 200px;" placeholder="Cari..." value="{{ request('search') }}">
+                        <button type="submit" class="btn btn-primary">Cari</button>
                     </form>
                 </div>
             </div>
@@ -206,7 +204,7 @@
                     @forelse($testimoni as $testimoni)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>#</td>
+                            <td>{{ $testimoni['name'] }}</td>
                             <td>{{ $testimoni['pekerjaan'] }}</td>
                             <td>{{ $testimoni['program_studi'] }}</td>
                             <td>{{ $testimoni['angkatan'] }}</td>
