@@ -181,8 +181,10 @@
                 <div class="right">
                     <!-- Form pencarian -->
                     <form action="{{ route('delete.index') }}" method="GET" class="d-inline">
-                        <input type="text" name="search" class="form-control d-inline" style="width: 200px;" placeholder="Cari..." value="{{ request('search') }}">
-                        <button type="submit" class="btn btn-primary">Cari</button>
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request('search') }}">
+                            <button type="submit" class="btn btn-primary">Cari</button>
+                        </div>
                     </form>
                 </div>
             </div>
