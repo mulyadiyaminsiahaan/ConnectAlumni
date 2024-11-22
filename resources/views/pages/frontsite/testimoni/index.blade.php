@@ -24,15 +24,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-            transition: transform 0.2s;
-        } */
+       
 
         iframe {
             width: 560px;
@@ -44,16 +36,7 @@
     margin-left: 1.5rem; /* Atur jarak sesuai kebutuhan */
 }
 
-        /*.video-image {
-            position: relative;
-            margin-right: 1rem;
-        }
 
-        .video-image img {
-            width: 400px !important;
-            height: 300px !important;
-            object-fit: cover;
-        } */
     </style>
 </head>
 

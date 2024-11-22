@@ -242,7 +242,7 @@
                 <div class="flex justify-center mt-10">
                     <!-- Menambahkan gambar di tengah -->
                     <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-10 w-48 h-auto">
-                </div>
+            </div>
         
                 <div class="flex justify-center space-x-8 mt-10"> <!-- Added mt-10 for top margin -->
                     <a href="#">

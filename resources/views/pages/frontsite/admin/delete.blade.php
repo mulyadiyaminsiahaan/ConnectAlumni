@@ -168,6 +168,7 @@
             @csrf
         </form>
     </div>
+
     <!-- Main content -->
     <div class="main-content" id="mainContent">
         <button class="toggle-btn" onclick="toggleSidebar()">
@@ -176,8 +177,14 @@
 
         <div class="container">
             <div class="header">
-                <div class="left">Menampilkan 3 dari 3 laporan</div>
-                <div class="right">Cari nama pelapor</div>
+                <div class="left">Menampilkan {{ count($testimoni) }} hasil</div>
+                <div class="right">
+                    <!-- Form pencarian -->
+                    <form action="{{ route('delete.index') }}" method="GET" class="d-inline">
+                        <input type="text" name="search" class="form-control d-inline" style="width: 200px;" placeholder="Cari..." value="{{ request('search') }}">
+                        <button type="submit" class="btn btn-primary">Cari</button>
+                    </form>
+                </div>
             </div>
 
             <table>
@@ -194,49 +201,42 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($testimoni as $testimoni)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>#</td>
-                        <td>{{ $testimoni['pekerjaan'] }}</td>
-                        <td>{{ $testimoni['program_studi'] }}</td>
-                        <td>{{ $testimoni['angkatan'] }}</td>
-                        <td>{{ $testimoni['judul_utama'] }}</td>
-                        <td>{{ $testimoni['link_video'] }}</td>
-                        <td>
-                            <a href="{{ route('delete.showupdate', $testimoni['id']) }}"><button type="button" class="btn btn-info rounded-pill">Edit</button></a>
-                            <form action="{{ route('delete.delete', $testimoni['id']) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Testimoni ini?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                    @forelse($testimoni as $testimoni)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>#</td>
+                            <td>{{ $testimoni['pekerjaan'] }}</td>
+                            <td>{{ $testimoni['program_studi'] }}</td>
+                            <td>{{ $testimoni['angkatan'] }}</td>
+                            <td>{{ $testimoni['judul_utama'] }}</td>
+                            <td>{{ $testimoni['link_video'] }}</td>
+                            <td>
+                                <a href="{{ route('delete.showupdate', $testimoni['id']) }}"><button type="button" class="btn btn-info rounded-pill">Edit</button></a>
+                                <form action="{{ route('delete.delete', $testimoni['id']) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Testimoni ini?')">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="text-center">Tidak ada hasil ditemukan</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
+    </div>
 
-</body>
-
-</html>
-<!-- JavaScript untuk toggle sidebar -->
-<script>
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        var mainContent = document.getElementById("mainContent");
-
-        // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
-        sidebar.classList.toggle("hidden");
-
-        // Menambahkan atau menghapus kelas 'sidebar-hidden' untuk main content
-        mainContent.classList.toggle("sidebar-hidden");
-
-        // Debugging
-        console.log('Sidebar visibility:', !sidebar.classList.contains("hidden"));
-    }
-</script>
-
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.getElementById("mainContent");
+            sidebar.classList.toggle("hidden");
+            mainContent.classList.toggle("sidebar-hidden");
+        }
+    </script>
 </body>
 
 </html>

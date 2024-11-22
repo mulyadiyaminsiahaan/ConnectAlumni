@@ -13,18 +13,33 @@ class DeleteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $client = new Client(); // Membuat instance baru dari GuzzleHttp Client untuk mengirim request HTTP.
-        $url = "http://127.0.0.1:8001/api/testimoni"; // Mengatur URL endpoint API
-        $response = $client->request('GET', $url); // Mengirim request GET ke API untuk mendapatkan data testimoni
-
-        $content = $response->getBody()->getContents(); // Mendapatkan isi body dari response API.
-        $contentArray = json_decode($content, true); // Mengubah data JSON dari response menjadi array PHP.
-
-
+        $client = new Client();
+        $url = "http://127.0.0.1:8001/api/testimoni";
+    
+        // Ambil kata kunci pencarian dari input pengguna
+        $search = $request->get('search');
+    
+        // Kirim parameter pencarian ke API jika ada input
+        $query = [];
+        if ($search) {
+            $query['search'] = $search;
+        }
+    
+        // Buat URL dengan query string jika ada parameter pencarian
+        if (!empty($query)) {
+            $url .= '?' . http_build_query($query);
+        }
+    
+        // Lakukan request ke API
+        $response = $client->request('GET', $url);
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+    
         return view('pages.frontsite.admin.delete', [
             'testimoni' => $contentArray['data'],
+            'search' => $search, // Kirim kata kunci ke view untuk referensi
         ]);
     }
 
