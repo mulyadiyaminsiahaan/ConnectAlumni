@@ -14,6 +14,7 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ConnectedController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\AlumniController;
 
 Route::prefix('auth')->group(function () {
     Route::get("/register", [AuthController::class, "getRegister"])->name("register");
@@ -28,6 +29,9 @@ Route::get('/', [LandingController::class, 'index'])->name('index');
 
 // Mengarahkan '/category' ke metode index dari CategoryController
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+
+// Route untuk menampilkan alumni
+Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
 
 // Mengarahkan '/testimoni' ke metode show dari TestimoniController
 Route::get('/testimoni', [TestimoniController::class, 'index'])->name('testimoni.index');
