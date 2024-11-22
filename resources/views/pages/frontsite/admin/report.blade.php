@@ -184,19 +184,17 @@
             <thead>
                 <tr>
                     <th width="5%">#</th>
-                    <th width="15%">Dari</th>
-                    <th width="10%">Judul Testimoni</th>
+                    <th width="15%">Judul Testimoni</th>
                     <th width="10%">Nama</th>
                     <th width="10%">Isi Laporan</th>
                     <th width="10%">Waktu Melapor</th>
-                    <th width="20%">Aksi</th>
+                    <th width="10%">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse($reports as $report)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>#</td>
                     <td>{{ $report['judul_utama'] }}</td>
                     <td>{{ $report['nama'] }}</td>
                     <td>{{ $report['alasan'] }}</td>
