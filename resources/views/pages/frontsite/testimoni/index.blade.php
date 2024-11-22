@@ -24,30 +24,26 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-       
-
         iframe {
             width: 560px;
             height: 315px;
             border-radius: 0.5rem;
             border: none;
         }
+
         .video-card div {
-    margin-left: 1.5rem; /* Atur jarak sesuai kebutuhan */
-}
-
-
+            margin-left: 1.5rem;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 p-10">
     <div class="flex flex-col gap-8">
-
         <h2 class="text-7xl font-bold text-center text-[#1E2B4F] mb-6">Alumni Testimoni</h2>
 
         @foreach($testimoni as $testimoni)
-            <div class="video-card">
-                @if (str_contains($testimoni['link_video'], 'youtube.com') || str_contains($testimoni['link_video'], 'youtu.be'))
+        <div class="video-card relative">
+            @if (str_contains($testimoni['link_video'], 'youtube.com') || str_contains($testimoni['link_video'], 'youtu.be'))
                 @php
                     $videoId = str_contains($testimoni['link_video'], 'youtube.com') 
                         ? explode('v=', $testimoni['link_video'])[1] 
@@ -58,12 +54,43 @@
             @else
                 <p class="text-red-500">Link video tidak valid atau belum didukung.</p>
             @endif
-                <div class="ml-6">
-                    <h4 class="mt-4 text-lg font-medium text-[#1E2B4F]">{{ $testimoni['judul_utama'] }}</h4>
-                    <p class="text-sm text-[#AFAEC3]"><em>{{ $testimoni['pekerjaan'] }}</em></p>
-                    <p class="text-xs text-gray-500">{{ $testimoni['program_studi'] }} {{ $testimoni['angkatan'] }}</p>
+            <div class="ml-6">
+                <h4 class="mt-4 text-lg font-medium text-[#1E2B4F]">{{ $testimoni['judul_utama'] }}</h4>
+                <p class="text-sm text-[#AFAEC3]"><em>{{ $testimoni['pekerjaan'] }}</em></p>
+                <p class="text-xs text-gray-500">{{ $testimoni['program_studi'] }} {{ $testimoni['angkatan'] }}</p>
+            </div>
+            <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-red-500" title="Report" onclick="handleReportClick(event)">
+                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+            </a>
+
+            <!-- Report Form Pop-up -->
+            <div id="reportForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Report Testimoni</h2>
+                    <form action="{{ route('testimoni.report') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="testimoni_id" id="reportTestimoniId">
+                        <div class="space-y-4">
+                            <div>
+                                <input name="judul_utama" id="reportJudulUtama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Judul Utama" type="text"/>
+                            </div>
+                            <div>
+                                <input name="nama" id="reportNama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Nama" type="text" />
+                            </div>
+                            <div>
+                                <textarea name="alasan" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Reason for reporting" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-end space-x-4">
+                            <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleReportForm()">Cancel</button>
+                            <button class="bg-red-500 text-white px-6 py-2 rounded-full" type="submit">Report</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
         @endforeach
 
         <!-- Button Add Testimoni -->
@@ -73,66 +100,57 @@
 
         <!-- Form Testimoni Pop-up -->
         @auth
-            <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-                <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
-                    <h2 class="text-2xl font-bold mb-4">Add Testimoni</h2>
-                    <form action="{{ route('testimoni.store') }}" method="POST">
-                        @csrf
-                        <div class="space-y-4">
-                            <div>
-                                <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
-                            </div>
-                            <div>
-                                <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
-                                    <option value="" disabled selected>Program Studi</option>
-                                    <option value="Sistem Informasi">S1 Sistem Informasi</option>
-                                    <option value="Informatika">S1 Informatika</option>
-                                    <option value="Teknik Elektro">S1 Teknik Elektro</option>
-                                    <option value="Manajemen Rekayasa">S1 Manajemen Rekayasa</option>
-                                    <option value="Metalurgi">S1 Metalurgi</option>
-                                    <option value="Bioproses">S1 Bioproses</option>
-                                    <option value="D3 Teknologi Informasi">D3 Teknologi Informasi</option>
-                                    <option value="D3 Teknik Elektro">D3 Teknik Elektro</option>
-                                    <option value="D4 Rekayasa Perangkat Lunak">D4 Rekayasa Perangkat Lunak</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
-                                    <option value="" disabled selected>Angkatan</option>
-                                    @for ($year = 2000; $year <= date('Y'); $year++)
-                                        <option value="{{ $year }}">{{ $year }}</option>
-                                    @endfor
-                                </select>
-                            </div>
-                            <div>
-                                <input name="judul_utama" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul Utama" type="text"/>
-                            </div>
-                            <div>
-                                <input name="link_video" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-end space-x-4">
-                            <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleTestimoniForm()">Cancel</button>
-                            <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
-                        </div>
-                    </form>
-                </div>
+        <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-2xl font-bold mb-4">Add Testimoni</h2>
+                <form action="{{ route('testimoni.store') }}" method="POST">
+                    @csrf
+                    <div class="space-y-4">
+                        <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100" placeholder="Pekerjaan" type="text"/>
+                        <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100">
+                            <option value="" disabled selected>Program Studi</option>
+                            <!-- Options -->
+                        </select>
+                        <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100">
+                            <option value="" disabled selected>Angkatan</option>
+                            <!-- Years -->
+                        </select>
+                        <input name="judul_utama" class="w-full p-4 border rounded-full bg-gray-100" placeholder="Judul Utama" type="text"/>
+                        <input name="link_video" class="w-full p-4 border rounded-full bg-gray-100" placeholder="Link Video" type="text"/>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleTestimoniForm()">Cancel</button>
+                        <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
+                    </div>
+                </form>
             </div>
+        </div>
         @else
-            <!-- Login Notification if Not Authenticated -->
-            <div id="loginNotification" class="fixed top-4 right-4 bg-yellow-500 text-white p-4 rounded-lg shadow-lg hidden">
-                Silakan login terlebih dahulu untuk menambahkan testimoni.
-            </div>
+        <div id="loginNotification" class="fixed top-4 right-4 bg-yellow-500 text-white p-4 rounded-lg hidden">
+            Silakan login terlebih dahulu untuk menambahkan testimoni.
+        </div>
         @endauth
 
         <!-- Success Notification -->
         @if(session('success'))
-            <div id="successNotification" class="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg">
-                {{ session('success') }}
-            </div>
+        <div id="successNotification" class="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg">
+            {{ session('success') }}
+        </div>
         @endif
 
         <script>
+            function toggleReportForm() {
+                const reportForm = document.getElementById('reportForm');
+                reportForm.classList.toggle('hidden');
+            }
+
+            function handleReportClick(event) {
+                event.preventDefault();
+                const testimoniId = event.currentTarget.closest('.video-card').dataset.testimoniId;
+                document.getElementById('reportTestimoniId').value = testimoniId;
+                toggleReportForm();
+            }
+
             function toggleTestimoniForm() {
                 const testimoniForm = document.getElementById('testimoniForm');
                 testimoniForm.classList.toggle('hidden');
@@ -141,17 +159,16 @@
             function handleAddTestimoniClick(event) {
                 event.preventDefault();
                 @auth
-                    toggleTestimoniForm();
+                toggleTestimoniForm();
                 @else
-                    const loginNotification = document.getElementById('loginNotification');
-                    loginNotification.classList.remove('hidden');
-                    setTimeout(() => {
-                        loginNotification.classList.add('hidden');
-                    }, 3000);
+                const loginNotification = document.getElementById('loginNotification');
+                loginNotification.classList.remove('hidden');
+                setTimeout(() => {
+                    loginNotification.classList.add('hidden');
+                }, 3000);
                 @endauth
             }
 
-            // Hide success notification after a few seconds
             document.addEventListener('DOMContentLoaded', function() {
                 const notification = document.getElementById('successNotification');
                 if (notification) {

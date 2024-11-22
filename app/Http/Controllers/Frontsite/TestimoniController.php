@@ -55,6 +55,8 @@ class TestimoniController extends Controller
         }
     }
 
+    
+
     // Menghapus testimoni berdasarkan id testimoni nya
 
     public function deleteTestimoni($id)
@@ -113,7 +115,5 @@ class TestimoniController extends Controller
             return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
         }
     }
-
-    
 
 }

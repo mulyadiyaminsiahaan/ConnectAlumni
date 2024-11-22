@@ -157,68 +157,86 @@
             @csrf
         </form>
     </div>
-    <!-- Main content -->
-    <div class="main-content" id="mainContent">
-        <button class="toggle-btn" onclick="toggleSidebar()">
-            <span class="toggle-icon">☰</span> <span class="bold-text">Report Data</span>
-        </button>
-
-<div class="container">
-    <div class="header">
-        <div class="left">Menampilkan 3 dari 3 laporan</div>
-        <div class="right">Cari nama pelapor</div>
-    </div>
     
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Dari</th>
-                <th>Isi Laporan</th>
-                <th>Waktu</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Gung Steven</td>
-                <td>Pak, Tolong</td>
-                <td>Minggu, 10 Oktober 2021</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jordan</td>
-                <td>Pak, Tolong</td>
-                <td>Senin, 23 Oktober 2021</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Gara</td>
-                <td>Pak, Tolong</td>
-                <td>Minggu, 30 Oktober 2021</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<!-- Main content -->
+<div class="main-content" id="mainContent">
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <span class="toggle-icon">☰</span> <span class="bold-text">Report Data</span>
+    </button>
 
-</body>
-</html>
-<!-- JavaScript untuk toggle sidebar -->
-<script>
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        var mainContent = document.getElementById("mainContent");
+    <div class="container">
+        <div class="header">
+            <div class="left">Menampilkan {{ count($reports) }} hasil</div>
+            <div class="right"> 
+                <!-- Form pencarian -->
+                <form action="{{ route('delete.index') }}" method="GET" class="d-inline">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request('search') }}">
+                        <button type="submit" class="btn btn-primary">Cari</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th width="5%">#</th>
+                    <th width="15%">Dari</th>
+                    <th width="10%">Judul Testimoni</th>
+                    <th width="10%">Nama</th>
+                    <th width="10%">Isi Laporan</th>
+                    <th width="10%">Waktu Melapor</th>
+                    <th width="20%">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($reports as $report)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>#</td>
+                    <td>{{ $report['judul_utama'] }}</td>
+                    <td>{{ $report['nama'] }}</td>
+                    <td>{{ $report['alasan'] }}</td>
+                    <td>{{ $report['waktu'] }}</td>
+                    <td>
+                        <form action="{{ route('delete.delete', $testimoni['id']) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Report ini?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="8" class="text-center">Tidak ada hasil ditemukan</td>
+                </tr>
 
-        // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
-        sidebar.classList.toggle("hidden");
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+    </div>
 
-        // Menambahkan atau menghapus kelas 'sidebar-hidden' untuk main content
-        mainContent.classList.toggle("sidebar-hidden");
+    </body>
+    </html>
+    <!-- JavaScript untuk toggle sidebar -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.getElementById("mainContent");
 
-        // Debugging
-        console.log('Sidebar visibility:', !sidebar.classList.contains("hidden"));
-    }
-</script>
+            // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
+            sidebar.classList.toggle("hidden");
 
-</body>
-</html>
+            // Menambahkan atau menghapus kelas 'sidebar-hidden' untuk main content
+            mainContent.classList.toggle("sidebar-hidden");
+
+            // Debugging
+            console.log('Sidebar visibility:', !sidebar.classList.contains("hidden"));
+        }
+    </script>
+
+    </body>
+    </html>
