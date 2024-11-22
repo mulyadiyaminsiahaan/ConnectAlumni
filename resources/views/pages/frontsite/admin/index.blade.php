@@ -165,42 +165,30 @@
         <p>5 data laporan terbaru yang masuk dari user</p>
     </div>
     <table class="report-table">
-        <tbody><tr>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>Waktu</th>
-        </tr>
-        <tr>
-            <td><div class="container">Sangid Astawa</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">15 jam yang lalu</div></td>
-        </tr>
-        <tr>
-            <td><div class="container">Ade Kesuma</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">10/12/2021</div></td>
-        </tr>
-        <tr>
-            <td><div class="container">Wardita</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">08/05/2021</div></td>
-        </tr>
-        <tr>
-            <td><div class="container">Rama</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">10/06/2021</div></td>
-        </tr>
-        <tr>
-            <td><div class="container">Arik</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">12/07/2021</div></td>
-        </tr>
-        <tr>
-            <td><div class="container">Asep</div></td>
-            <td><div class="container">terjadi pelanggaran user</div></td>
-            <td><div class="container">23/05/2021</div></td>
-        </tr>
-    </tbody></table>
+        <thead>
+            <tr>
+                <th width="5%">#</th>
+                <th width="15%">Nama</th>
+                <th width="10%">Deskripsi</th>
+                <th width="10%">Waktu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse($reports as $report)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $report['nama'] }}</td>
+                <td>{{ $report['alasan'] }}</td>
+                <td>{{ $report['waktu'] }}</td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="8" class="text-center">Tidak ada hasil ditemukan</td>
+            </tr>
+
+            @endforelse
+        </tbody>
+    </table>
 </div>
 
 <script>

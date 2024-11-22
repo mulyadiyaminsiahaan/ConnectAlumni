@@ -72,6 +72,7 @@ Route::get('/connected', [ConnectedController::class, 'index'])->name('connected
 // Mengarahkan '/profil' ke metode show dari ProfilController
 // routes/web.php
 Route::get('/profil', [ProfilController::class, 'show'])->name('profil')->middleware('auth');
+
 Route::get('/profil/edit', [ProfilController::class, 'edit'])->name('editprofil')->middleware('auth');
 // Route to handle form submission and update profile
 Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update')->middleware('auth');

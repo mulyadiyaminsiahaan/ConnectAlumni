@@ -47,6 +47,42 @@
                 @endforeach
             </div>
         </div>
+        
+        <!-- Social Media -->
+        <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">
+            <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
+                <h3 class="text-[#1E2B4F] text-2xl font-semibold">Follow Us on Social Media</h3>
+                <p class="text-[#A7B0B5] mt-2">Stay connected with us</p>
+        
+                <div class="flex justify-center mt-10">
+                    <!-- Menambahkan gambar di tengah -->
+                    <img src="{{ asset('/assets/frontsite/images/logo.png') }}" alt="Social Media" class="mx-auto mb-10 w-48 h-auto">
+            </div>
+        
+                <div class="flex justify-center space-x-8 mt-10"> <!-- Added mt-10 for top margin -->
+                    <a href="#">
+                        <img src="{{ asset('/assets/frontsite/images/facebook.svg') }}" alt="Facebook" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="iadelofc@gmail.com">
+                        <img src="{{ asset('/assets/frontsite/images/envelope-at-fill.svg') }}" alt="Email" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="https://www.instagram.com/iadelofc/profilecard/?igsh=bHNoMDQ1eHlrODJz">
+                        <img src="{{ asset('/assets/frontsite/images/instagram.svg') }}" alt="Instagram" class="w-8 h-8 mx-4">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('/assets/frontsite/images/whatsapp.svg') }}" alt="WhatsApp" class="w-8 h-8 mx-4">
+                    </a>
+                </div>
+                {{-- tambahkan Copyright --}}
+                <div class="flex justify-center mt-10">
+                    <p class="text-[#1E2B4F] mt-2">Copyright © ConnectAlumni. inc.</p>
+                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Social Media -->
+
     </section>
     <!-- End Best Alumnis -->
 </main>

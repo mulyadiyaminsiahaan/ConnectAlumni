@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class AdminController extends Controller
 {
@@ -12,7 +13,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('pages.frontsite.admin.index');
+        $client = new Client();
+        $url = "http://127.0.0.1:8001/api/admin";
+        $response = $client->request('GET', $url);
+ 
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+ 
+        // print_r($contentArray['data']);
+
+ 
+        return view('pages.frontsite.admin.index', [
+            'reports' => $contentArray['data'],
+        ]);
     }
 
     /**

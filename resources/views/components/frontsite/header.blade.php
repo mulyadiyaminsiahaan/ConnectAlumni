@@ -260,22 +260,22 @@
                         hover:border-gray-300 hover:text-gray-700"
             -->
             <a
-            href="#"
+            href="{{ route('index') }}"
             class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
             >Home</a
             >
             <a
-            href="#"
+            href="{{ route('testimoni.index') }}"
             class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
             >Testimoni</a
             >
             <a
-            href="#"
+            href="{{ route('category.index') }}"
             class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
             >Category</a
             >
             <a
-            href="#"
+            href="{{ route('campus.index') }}"
             class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
             >Campus</a
             >
