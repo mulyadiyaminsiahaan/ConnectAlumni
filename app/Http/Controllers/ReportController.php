@@ -66,6 +66,4 @@ class ReportController extends Controller
             return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
         }
     }
-
-
 }
