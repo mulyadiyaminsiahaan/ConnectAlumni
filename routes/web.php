@@ -40,6 +40,7 @@ Route::post('/testimoni', [TestimoniController::class, 'store'])->name('testimon
 // Mengarahkan '/testimoni' ke metode store dari TestimoniController
 Route::post('/testimoni/report', [ReportController::class, 'store'])->name('testimoni.report');
 
+
 // Mengarahkan '/campus' ke metode index dari CampusController
 Route::get('/campus', [CampusController::class, 'index'])->name('campus.index');
 
@@ -49,7 +50,11 @@ Route::prefix('backsite')->name('backsite.')->group(function () {
 });
 
 // Mengarahkan '/admin' ke metode index dari AdminController
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.dashboard');
+
+// Route::get('/admin', function () {
+//     return view('pages.frontsite.admin.index');
+// })->middleware('auth')->name('admin.dashboard');
 
 // Mengarahkan '/admin/report' ke metode index dari ReportController
 Route::get('/report', [ReportController::class, 'index'])->name('report.index');
@@ -80,7 +85,3 @@ Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.
 Route::get('/landing-page', function () {
     return view('pages.frontsite.landing-page.index');
 })->middleware('auth')->name('landing-page');
-
-Route::get('/admin', function () {
-    return view('pages.frontsite.admin.index');
-})->middleware('auth')->name('admin.dashboard');

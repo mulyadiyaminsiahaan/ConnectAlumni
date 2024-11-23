@@ -18,13 +18,13 @@ class AdminController extends Controller
         $response = $client->request('GET', $url);
  
         $content = $response->getBody()->getContents();
-        $contentArray = json_decode($content, true);
+        $Array = json_decode($content, true);
  
-        // print_r($contentArray['data']);
+        //print_r($Array['data']);
 
  
         return view('pages.frontsite.admin.index', [
-            'reports' => $contentArray['data'],
+            'reports' => $Array['data'],
         ]);
     }
 
