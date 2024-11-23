@@ -71,7 +71,9 @@ Route::delete('/delete/{id}', [DeleteController::class, 'deleteTestimoni'])->nam
 Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
 
 // Mengarahkan '/admin/connected' ke metode index dari ConnectedController
-Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
+//Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
+Route::get('/connected', [ConnectedController::class, 'showUsers'])->name('connected.index');
+
 
 // Mengarahkan '/landing-page/profil' ke metode index dari ProfilController
 // Mengarahkan '/profil' ke metode show dari ProfilController
