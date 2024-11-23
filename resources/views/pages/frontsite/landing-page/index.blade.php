@@ -137,34 +137,33 @@
                 <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
                 <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
 
-            <!-- Alumni Cards -->
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
-                @php
-                    $users = $users->shuffle()->take(4); // Shuffle and take only 4 users
-                @endphp
-                @foreach($users as $user)
-                    @if($user->photo) <!-- Check if the user has a photo -->
-                        <a href="{{ route('connected.index') }}" class="group">
-                            <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                                <img src="{{ asset('storage/' . $user->photo) }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="{{ $user->name }}">
-                                <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
-                                    <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                <!-- Alumni Cards -->
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
+                    @php
+                        $users = $users->shuffle()->take(4); // Shuffle and take only 4 users
+                    @endphp
+                    @foreach($users as $user)
+                        @if($user->photo) <!-- Check if the user has a photo -->
+                            <a href="{{ route('connected.index') }}" class="group">
+                                <!-- Card Container -->
+                                <div class="relative w-full rounded-2xl overflow-hidden mt-5" style="background-color: rgba(82, 95, 225, 0.1);">
+                                    <!-- Image Section -->
+                                    <div class="relative w-full h-[350px]">
+                                        <img src="{{ asset('storage/' . $user->photo) }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="{{ $user->name }}">
+                                        <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
+                                            <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Connected</span>
+                                        </div>
+                                    </div>
+                                    <!-- Name and Job Section -->
+                                    <div class="p-6 mt-5 mb-5">
+                                        <div class="text-black text-lg font-semibold pl-4">{{ $user->name }}</div>
+                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user->job }}</div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="flex items-center justify-between mt-5">
-                                <div>
-                                    <div class="text-[#1E2B4F] text-lg font-semibold">{{ $user->name }}</div>
-                                    <div class="text-[#AFAEC3] mt-1">{{ $user->job }}</div>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    {{-- You can add a rating or any other feature here --}}
-                                </div>
-                            </div>
-                        </a>
-                    @endif
-                @endforeach
-            </div>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
         </section>
         <!-- End Best Alumnis -->
 
