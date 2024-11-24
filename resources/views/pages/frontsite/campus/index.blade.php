@@ -48,7 +48,7 @@
                     </a>
 
                     <a href="https://www.instagram.com/himatera_del/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                    <img src="{{ asset('/assets/frontsite/images/TRPLItdel.jpg') }}" alt="Teknologi Rekayasa Perangkat Lunak" class="w-full object-contain rounded-t-2xl">
+                    <img src="{{ asset('/assets/frontsite/images/trpl.jpeg') }}" alt="Teknologi Rekayasa Perangkat Lunak" class="w-full object-contain rounded-t-2xl">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">D4 Teknologi Rekayasa Perangkat Lunak</h5>
                         <p class="text-[#AFAEC3] mt-1">Fakultas Vokasi</p>
                     </a>
@@ -60,13 +60,13 @@
                     </a>
 
                     <a href="https://www.instagram.com/himatek.itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="Teknologi Komputer" class="w-full object-contain rounded-t-2xl">
+                    <img src="{{ asset('/assets/frontsite/images/NM.jpeg') }}" alt="Teknologi Komputer" class="w-full object-contain rounded-t-2xl">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">D3 Teknologi Komputer</h5>
                         <p class="text-[#AFAEC3] mt-1">Fakultas Vokasi</p>
                     </a>
 
                     <a href="https://www.instagram.com/himator_itdel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="" class="w-full object-contain rounded-t-2xl">
+                    <img src="{{ asset('/assets/frontsite/images/BP2.jpg') }}" alt="" class="w-full object-contain rounded-t-2xl">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Teknik Bioproses</h5>
                         <p class="text-[#AFAEC3] mt-1">Fakultas Bioteknologi</p>
                     </a>
@@ -78,7 +78,7 @@
                     </a>
 
                     <a href="https://www.instagram.com/metalurgidel/?hl=en" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                    <img src="{{ asset('/assets/frontsite/images/logodel.png') }}" alt="" class="w-full object-contain rounded-t-2xl">
+                    <img src="{{ asset('/assets/frontsite/images/metal3.png') }}" alt="" class="w-full h-64 object-contain rounded-t-2xl">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">S1 Teknik Metalurgi</h5>
                         <p class="text-[#AFAEC3] mt-1">Fakultas Teknologi Industri</p>
                     </a>
