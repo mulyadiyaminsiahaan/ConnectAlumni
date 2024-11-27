@@ -203,7 +203,7 @@
                         <form action="{{ route('report.delete', $report['id']) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus Report ini?')">Delete</button>
+                            <button type="submit" class="btn btn-primary rounded-pill" onclick="return confirm('Anda yakin tugas ini telah selesai?')">Done</button>
                         </form>
                     </td>
                 </tr>

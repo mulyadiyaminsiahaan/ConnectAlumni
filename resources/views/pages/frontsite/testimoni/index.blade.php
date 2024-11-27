@@ -3,7 +3,6 @@
 @section('title', 'Testimoni')
 
 @section('content')
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +41,7 @@
         <h2 class="text-7xl font-bold text-center text-[#1E2B4F] mb-6">Alumni Testimoni</h2>
 
         @foreach($testimoni as $testimoni)
-        <div class="video-card relative">
+        <div class="video-card relative" data-testimoni-id="{{ $testimoni['id'] }}">
             @if (str_contains($testimoni['link_video'], 'youtube.com') || str_contains($testimoni['link_video'], 'youtu.be'))
                 @php
                     $videoId = str_contains($testimoni['link_video'], 'youtube.com') 
@@ -64,39 +63,40 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
             </a>
-
-            <!-- Report Form Pop-up -->
-            <div id="reportForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-                <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
-                    <h2 class="text-2xl font-bold mb-4">Report Testimoni</h2>
-                    <form action="{{ route('testimoni.report') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="testimoni_id" id="reportTestimoniId">
-                        <div class="space-y-4">
-                            <div>
-                                <input name="judul_utama" id="reportJudulUtama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Judul Utama" type="text"/>
-                            </div>
-                            <div>
-                                <input name="nama" id="reportNama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Nama" type="text" />
-                            </div>
-                            <div>
-                                <textarea name="alasan" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Reason for reporting" rows="4"></textarea>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-end space-x-4">
-                            <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleReportForm()">Cancel</button>
-                            <button class="bg-red-500 text-white px-6 py-2 rounded-full" type="submit">Report</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
         @endforeach
 
-        <!-- Button Add Testimoni -->
+        <!-- Report Form Pop-up (Outside the Cards) -->
+        <div id="reportForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-2xl font-bold mb-4">Report Testimoni</h2>
+                <form action="{{ route('testimoni.report') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="testimoni_id" id="reportTestimoniId">
+                    <div class="space-y-4">
+                        <div>
+                            <input name="judul_utama" id="reportJudulUtama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Judul Utama" type="text"/>
+                        </div>
+                        <div>
+                            <input name="nama" id="reportNama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Nama" type="text" />
+                        </div>
+                        <div>
+                            <textarea name="alasan" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Reason for reporting" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleReportForm()">Cancel</button>
+                        <button class="bg-red-500 text-white px-6 py-2 rounded-full" type="submit">Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Add Testimoni Button -->
         <a href="#" class="fixed bottom-0 right-0 m-4" onclick="handleAddTestimoniClick(event)">
             <img src="{{ asset('/assets/frontsite/images/buttonadd.png') }}" alt="Add Testimoni" class="w-16 h-16">            
         </a>
+
         <!-- Form Testimoni Pop-up -->
         @auth
         <div id="testimoniForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
