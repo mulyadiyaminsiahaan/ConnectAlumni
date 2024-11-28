@@ -113,7 +113,7 @@ class TestimoniController extends Controller
             'link_video' => $request->input('link_video'),
         ]);
 
-                if ($response->successful()) {
+        if ($response->successful()) {
             return redirect()->back()->with('success', 'Testimoni berhasil ditambahkan!');
         } else {
             return redirect()->back()->with('error', 'Gagal menambahkan testimoni!');
