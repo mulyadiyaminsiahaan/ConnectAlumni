@@ -22,7 +22,7 @@
                 <div class="text-center absolute bottom-0 -left-20 -translate-y-14 bg-white px-7 py-5 rounded-xl shadow-2xl">
                     <h5 class="font-medium text-[#1E2B4F]">Johannes</h5>
                     <p class="text-xs text-[#AFAEC3] mt-1">Programmer</p>
-                    <a href="{{ route('connected.index') }}" class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</a>
+                    <a  class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</a>
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
                     @endphp
                     @foreach($users as $user)
                         @if($user->photo) <!-- Check if the user has a photo -->
-                            <a href="{{ route('connected.index') }}" class="group">
+                            <a href="{{ route('connected.index', ['userId' => $user->id]) }}" class="group">
                                 <!-- Card Container -->
                                 <div class="relative w-full rounded-2xl overflow-hidden mt-5" style="background-color: rgba(82, 95, 225, 0.1);">
                                     <!-- Image Section -->
@@ -179,13 +179,13 @@
             </div>
         
                 <div class="flex justify-center space-x-8 mt-10"> <!-- Added mt-10 for top margin -->
-                    <a href="#">
+                    <a href="https://web.facebook.com/iadelofc">
                         <img src="{{ asset('/assets/frontsite/images/facebook.svg') }}" alt="Facebook" class="w-8 h-8 mx-4">
                     </a>
                     <a href="iadelofc@gmail.com">
                         <img src="{{ asset('/assets/frontsite/images/envelope-at-fill.svg') }}" alt="Email" class="w-8 h-8 mx-4">
                     </a>
-                    <a href="https://www.instagram.com/iadelofc/profilecard/?igsh=bHNoMDQ1eHlrODJz">
+                    <a href="https://www.instagram.com/iadelofc/?igsh=bHNoMDQ1eHlrODJz">
                         <img src="{{ asset('/assets/frontsite/images/instagram.svg') }}" alt="Instagram" class="w-8 h-8 mx-4">
                     </a>
                     <a href="#">
