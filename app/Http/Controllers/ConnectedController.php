@@ -34,7 +34,7 @@ class ConnectedController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($userId)
+    public function showcard($userId)
     {
         $user = User::findOrFail($userId);
 

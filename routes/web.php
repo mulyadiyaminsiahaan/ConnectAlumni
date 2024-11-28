@@ -74,7 +74,7 @@ Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengatu
 //Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
 Route::get('/connected', [ConnectedController::class, 'showUsers'])->name('connected.index');
 //----//
-Route::get('/connected/{userId}', [ConnectedController::class, 'show'])->name('connected.index');
+Route::get('/connected/{userId}', [ConnectedController::class, 'showcard'])->name('connected.index');
 
 
 

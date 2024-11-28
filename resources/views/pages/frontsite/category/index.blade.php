@@ -23,9 +23,12 @@
 
                 <!-- Alumni Cards -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
+                    @php
+                        $users = $users->shuffle()->take(4); // Shuffle and take only 4 users
+                    @endphp
                     @foreach($users as $user)
                         @if($user->photo) <!-- Check if the user has a photo -->
-                            <a href="{{ route('connected.index') }}" class="group">
+                            <a href="{{ route('connected.index', ['userId' => $user->id]) }}" class="group">
                                 <!-- Card Container -->
                                 <div class="relative w-full rounded-2xl overflow-hidden mt-5" style="background-color: rgba(82, 95, 225, 0.1);">
                                     <!-- Image Section -->
@@ -44,6 +47,9 @@
                             </a>
                         @endif
                     @endforeach
+                </div>
+        </section>
+        <!-- End Best Alumnis -->
                 </div>
         </div>
         
