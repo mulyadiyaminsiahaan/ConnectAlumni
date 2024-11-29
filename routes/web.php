@@ -73,9 +73,6 @@ Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengatu
 // Mengarahkan '/admin/connected' ke metode index dari ConnectedController
 //Route::get('/connected', [ConnectedController::class, 'index'])->name('connected.index');
 Route::get('/connected', [ConnectedController::class, 'showUsers'])->name('connected.index');
-//----//
-Route::get('/connected/{userId}', [ConnectedController::class, 'showcard'])->name('connected.index');
-
 
 
 // Mengarahkan '/landing-page/profil' ke metode index dari ProfilController
