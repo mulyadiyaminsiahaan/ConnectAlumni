@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
-
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -15,20 +14,34 @@ class ReportController extends Controller
      * Store a newly created report in the API.
      */
 
-    public function index()
+    public function index(Request $request)
     {
         $client = new Client();
         $url = "http://127.0.0.1:8001/api/reports";
+        
+        // Ambil kata kunci pencarian dari input pengguna
+        $search = $request->get('search');
+        
+        // Kirim parameter pencarian ke API jika ada input
+        $query = [];
+        if ($search) {
+            $query['search'] = $search;
+        }
+        // Buat URL dengan query string jika ada parameter pencarian
+        if (!empty($query)) {
+            $url .= '?' . http_build_query($query);
+        }
+        
         $response = $client->request('GET', $url);
- 
         $content = $response->getBody()->getContents();
-        $contentArray = json_decode($content, true);
+        $contentArray = json_decode($content, true)['data'];
  
         // print_r($contentArray['data']);
 
  
         return view('pages.frontsite.admin.report', [
-            'reports' => $contentArray['data'],
+            'reports' => $contentArray,
+            // 'search' => $search,
         ]);
     }
 

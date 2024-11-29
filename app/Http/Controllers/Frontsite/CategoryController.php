@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Frontsite;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
@@ -12,25 +13,37 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     
     public function index(Request $request)
     {
-        // Mendapatkan filter dari request
-        $filter = $request->input('filter', ''); // Default filter kosong
-
-        // Query untuk mengambil data alumni
-        if ($filter == 'popular') {
-            // Mengambil berdasarkan jumlah alumni yang paling banyak (misalnya berdasarkan 'alumni_count')
-            $users = User::orderBy('alumni_count', 'desc')->get();
-        } elseif ($filter == 'recent') {
-            // Mengambil berdasarkan data terbaru
-            $users = User::orderBy('created_at', 'desc')->get();
-        } else {
-            // Mengambil semua data alumni jika filter kosong
-            $users = User::all(); // Get all users, not just the authenticated user
+        $client = new Client();
+        $url = "http://127.0.0.1:8001/api/categories";
+        
+        // Ambil kata kunci pencarian dari input pengguna
+        $search = $request->get('search');
+        
+        // Kirim parameter pencarian ke API jika ada input
+        $query = [];
+        if ($search) {
+            $query['search'] = $search;
         }
+        // Buat URL dengan query string jika ada parameter pencarian
+        if (!empty($query)) {
+            $url .= '?' . http_build_query($query);
+        }
+        
+        $response = $client->request('GET', $url);
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true)['data'];
+ 
+        // print_r($contentArray['data']);
 
-        // Mengirimkan data users ke view
-        return view('pages.frontsite.category.index', compact('users')); // Pass 'users' instead of 'user'
+ 
+        return view('pages.frontsite.category.index', [
+            'users' => $contentArray,
+            // 'search' => $search,
+        ]);
     }
 
     /**

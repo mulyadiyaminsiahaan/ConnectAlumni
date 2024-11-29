@@ -170,7 +170,7 @@
             <div class="left">Menampilkan {{ count($reports) }} hasil</div>
             <div class="right"> 
                 <!-- Form pencarian -->
-                <form action="{{ route('delete.index') }}" method="GET" class="d-inline">
+                <form action="{{ route('report.index') }}" method="GET" class="d-inline">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request('search') }}">
                         <button type="submit" class="btn btn-primary">Cari</button>
@@ -207,16 +207,15 @@
                         </form>
                     </td>
                 </tr>
-                @empty
+            @empty
                 <tr>
                     <td colspan="8" class="text-center">Tidak ada hasil ditemukan</td>
                 </tr>
-
-                @endforelse
-            </tbody>
-        </table>
-    </div>
-    </div>
+            @endforelse
+        </tbody>
+    </table>
+</div>
+</div>
 
     </body>
     </html>
