@@ -34,10 +34,20 @@ class ConnectedController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function showcard($userId)
     {
-        return abort(404);
+        $user = User::findOrFail($userId);
+
+        // Kirim data ke view
+        return view('pages.frontsite.connected.index', compact('user'));
     }
+
+    // public function show1(string $id)
+    // {
+    //     $users = User::findOrFail($id);
+    //     return redirect()->route('pages.frontsite.connected.index', ['id' => $user->id] );
+
+    // }
 
     /**
      * Show the form for editing the specified resource.

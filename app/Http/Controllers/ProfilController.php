@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+
 
 class ProfilController extends Controller
 {
@@ -50,12 +52,12 @@ class ProfilController extends Controller
      */
     public function edit()
     {
-        // Get the currently authenticated user
+        // Ambil pengguna yang sedang login
         $user = Auth::user();
-
-        // Return the profile view with the user data
+    
         return view('pages.frontsite.landing-page.editprofil', compact('user'));
     }
+    
 
     /**
      * Update the specified resource in storage.

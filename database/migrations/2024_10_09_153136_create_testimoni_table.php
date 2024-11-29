@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('testimoni', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index('fk_testimoni_to_users');
+            $table->string('nama');
             $table->string('pekerjaan');
             $table->string('program_studi');
             $table->string('angkatan');

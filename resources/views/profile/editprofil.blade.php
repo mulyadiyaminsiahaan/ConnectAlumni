@@ -33,10 +33,22 @@
                         @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
                     </div>
 
-                    <!-- Job Field -->
-                    <div>
+                    <!-- <div>
                         <label for="job" class="block text-gray-700">Job</label>
                         <input type="text" name="job" id="job" value="{{ old('job', $user->job) }}" class="w-full px-4 py-2 mt-2 border rounded-md">
+                        @error('job') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
+                    </div> -->
+
+                    <div>
+                        <label for="job" class="block text-gray-700">Job</label>
+                        <select name="job" id="job" class="w-full px-4 py-2 mt-2 border rounded-md">
+                            <option value="">-- Select Job --</option>
+                            <option value="developer" {{ old('job', $user->job) == 'developer' ? 'selected' : '' }}>Developer</option>
+                            <option value="designer" {{ old('job', $user->job) == 'designer' ? 'selected' : '' }}>Designer</option>
+                            <option value="manager" {{ old('job', $user->job) == 'manager' ? 'selected' : '' }}>Manager</option>
+                            <option value="analyst" {{ old('job', $user->job) == 'analyst' ? 'selected' : '' }}>Analyst</option>
+                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                        </select>
                         @error('job') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
                     </div>
 
@@ -87,11 +99,6 @@
                 <div class="flex justify-end mt-8">
                     <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Save Changes</button>
                 </div>
-                @if(session('success'))
-                <div id="successNotification" class="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg">
-                    {{ session('success') }}
-                </div>
-                @endif
             </form>
         </div>
     </main>
