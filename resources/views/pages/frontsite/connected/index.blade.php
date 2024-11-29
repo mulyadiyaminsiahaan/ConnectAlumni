@@ -13,9 +13,10 @@
             }
         </style>
         <div class="w-1/3 flex flex-col items-center">
-            <!-- Memeriksa apakah pengguna memiliki foto -->
+            @foreach($users as $user)
+                @if($user->photo) <!-- Memeriksa apakah pengguna memiliki foto -->
                         <div>
-                            <img class="w-48 h-48 rounded-full border-4 border-blue-500" src="{{ asset('storage/' . $user->photo) }}" alt="{{ $user->name }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="{{ $user->name }}">
+                            <img class="w-48 h-48 rounded-full border-4 border-blue-500" src="{{ asset('storage/' . $user->photo) }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="{{ $user->name }}">
                         </div>
         </div>
 
@@ -64,5 +65,6 @@
                 </div>
             </main>
 
-
+                @endif
+            @endforeach
 @endsection
