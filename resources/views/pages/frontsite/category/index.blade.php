@@ -23,7 +23,7 @@
     padding: 10px 16px;
     font-size: 16px;
     color: #333;
-    border: 1px solid #0D63F3; /* Warna biru */
+    border: 1px solid #bac1cf; /* Warna biru */
     border-radius: 25px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -32,7 +32,7 @@
 .search-input:focus {
     outline: none;
     border-color: #0D63F3; /* Warna biru lebih terang */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .search-button {
@@ -67,9 +67,8 @@
                     name="search"
                     class="search-input"
                     placeholder="Cari..."
-                    value="{{ request('search') }}"
-                >
-                <button type="submit" class="search-button">Cari</button>
+                    value="{{ request('search') }}">
+                {{-- <button type="submit" class="search-button">Cari</button> --}}
             </form>
         </div>
     </div>

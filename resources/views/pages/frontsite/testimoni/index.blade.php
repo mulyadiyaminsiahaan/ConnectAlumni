@@ -33,12 +33,80 @@
         .video-card div {
             margin-left: 1.5rem;
         }
+
+        .search-form-container {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-form-container form {
+    width: 100%;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #bac1cf; /* Warna biru */
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0D63F3; /* Warna biru lebih terang */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0D63F3;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-button:active {
+    background-color: #004080;
+}
     </style>
 </head>
 
 <body class="bg-gray-100 p-10">
     <div class="flex flex-col gap-8">
-        <h2 class="text-7xl font-bold text-center text-[#1E2B4F] mb-6">Alumni Testimoni</h2>
+        <h2 class="text-5xl font-bold text-center text-[#1E2B4F] mb-8">Alumni Testimoni
+            {{-- form pencarian --}}
+        <div class="container mx-auto mt-8">
+            <div class="search-form-container">
+                <form action="{{ route('testimoni.index') }}" method="GET">
+                    <input
+                        type="text"
+                        name="search"
+                        class="search-input"
+                        placeholder="Cari..."
+                        value="{{ request('search') }}">
+                    {{-- <button type="submit" class="search-button">Cari</button> --}}
+                </form>
+            </div>
+        </div>
+        </h2>
 
         @foreach($testimoni as $testimoni)
         <div class="video-card relative" data-testimoni-id="{{ $testimoni['id'] }}">
