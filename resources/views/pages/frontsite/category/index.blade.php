@@ -57,28 +57,25 @@
 .search-button:active {
     background-color: #004080;
 }</style>
-
-    {{-- form pencarian --}}
-    <div class="container mx-auto mt-8">
-        <div class="search-form-container">
-            <form action="{{ route('category.index') }}" method="GET">
-                <input
-                    type="text"
-                    name="search"
-                    class="search-input"
-                    placeholder="Cari..."
-                    value="{{ request('search') }}">
-                {{-- <button type="submit" class="search-button">Cari</button> --}}
-            </form>
-        </div>
-    </div>
-    
-
     <!-- Best Alumnis -->
     <section class="mt-4 lg:mt-16">
+        {{-- form pencarian --}}
+        <div class="container mx-auto mt-4 lg:mt-8">
+            <div class="search-form-container">
+                <form action="{{ route('category.index') }}" method="GET">
+                    <input
+                        type="text"
+                        name="search"
+                        class="search-input"
+                        placeholder="Cari..."
+                        value="{{ request('search') }}">
+                    {{-- <button type="submit" class="search-button">Cari</button> --}}
+                </form>
+            </div>
+        </div>
         <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
-            <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
-            <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
+            <h1 class="text-[#1E2B4F] text-4xl font-semibold">Alumni Del</h1>
+            <p class="text-[#A7B0B5] mt-2">Membantumu menyusun rencana masa depanmu</p>
 
                 <!-- Alumni Cards -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
@@ -98,6 +95,7 @@
                                     <div class="p-6 mt-5 mb-5">
                                         <div class="text-black text-lg font-semibold pl-4">{{ $user['name'] }}</div>
                                         <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user['job'] }}</div>
+                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{" "}}</div>
                                     </div>
                                 </div>
                             </a>

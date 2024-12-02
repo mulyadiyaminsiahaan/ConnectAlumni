@@ -140,7 +140,7 @@
                                 </div>
                                 <img
                                 class="h-12 w-12 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
-                                src="{{ asset('/assets/frontsite/images/authenticated-user.svg') }}"
+                                src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('/assets/frontsite/images/authenticated-user.svg') }}"
                                 alt="User Profile"
                                 />
                             </button>

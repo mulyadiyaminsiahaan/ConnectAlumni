@@ -21,8 +21,8 @@
                 <img src="{{ asset('/assets/frontsite/images/hero-image1.png') }}" class="bg-cover bg-center object-cover object-center max-h-[580px]" alt="Heroz Image"/>
                 <div class="text-center absolute bottom-0 -left-20 -translate-y-14 bg-white px-7 py-5 rounded-xl shadow-2xl">
                     <h5 class="font-medium text-[#1E2B4F]">Johannes</h5>
-                    <p class="text-xs text-[#AFAEC3] mt-1">Programmer</p>
-                    <a  class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</a>
+                    <p class="text-xs text-[#AFAEC3] mt-1">Alumni Del yang mengabdi menjadi Dosen</p>
+                    {{-- <a  class="block text-xs text-[#1E2B4F] font-medium bg-[#F2F6FE] px-4 py-2 rounded-full text-center mt-7">Connected</a> --}}
                 </div>
             </div>
 
@@ -77,7 +77,7 @@
                         <!-- CTA Button -->
                         <div class="grid lg:flex flex-wrap mt-4 gap-5">
                             @if(Auth::check())
-                                <span class="text-lg font-medium text-center text-[#0D63F3] italic">Buat Testimoni untuk meningkatkan Kampusmu</span>
+                                <span class="text-lg font-medium text-center text-[#0D63F3] italic">Bantu masyarakat dengan membuat testimonimu sendiri</span>
                             @else
                                 <a href="{{ route('register') }}" class="text-white text-lg font-medium text-center bg-[#0D63F3] rounded-full px-12 py-3">Sign Up</a>
                             @endif
@@ -98,28 +98,28 @@
         
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-10">
                     <!-- Cards without database data -->
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <a href="{{ route('category.index', ['search' => 'System Analyst']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">System Analyst</h5>
                         <p class="text-[#AFAEC3] mt-1">143 alumni</p>
                     </a>
         
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <a href="{{ route('category.index', ['search' => 'Programmer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">Programmer</h5>
                         <p class="text-[#AFAEC3] mt-1">50 alumni</p>
                     </a>
 
                     {{-- add more cards without database --}}
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <a href="{{ route('category.index', ['search' => 'UI/UX Designer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">UI/UX Designer</h5>
                         <p class="text-[#AFAEC3] mt-1">100 alumni</p>
                     </a>
 
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <a href="{{ route('category.index', ['search' => 'Data Analyst']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">Data Analyst</h5>
                         <p class="text-[#AFAEC3] mt-1">80 alumni</p>
                     </a>
 
-                    <a href="#" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
+                    <a href="{{ route('category.index', ['search' => 'Network Engineer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">Network Engineer</h5>
                         <p class="text-[#AFAEC3] mt-1">120 alumni</p>
                     </a>
@@ -158,6 +158,7 @@
                                     <div class="p-6 mt-5 mb-5">
                                         <div class="text-black text-lg font-semibold pl-4">{{ $user->name }}</div>
                                         <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user->job }}</div>
+                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{" "}}</div>
                                     </div>
                                 </div>
                             </a>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="w-2/3 bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-gray-500 text-lg">Edit Profile</h2>
+            <h2 class="text-black text-2xl font-bold">Edit Profile</h2>
             <form action="{{ route('profil.update') }}" method="POST" enctype="multipart/form-data" class="mt-6">
                 @csrf
                 @method('PUT')
@@ -85,7 +85,9 @@
 
                 <!-- Submit Button -->
                 <div class="flex justify-end mt-8">
-                    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Save Changes</button>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">Simpan Perubahan</button>
+                    <!-- Cancel Button -->
+                    <a href="{{ route('profil', $user->id) }}" class="bg-gray-500 text-white px-6 py-2 rounded-full shadow-lg ml-4">Batal</a>
                 </div>
                 @if(session('success'))
                 <div id="successNotification" class="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg">
