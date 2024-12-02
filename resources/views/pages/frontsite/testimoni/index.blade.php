@@ -175,7 +175,7 @@
                     @csrf
                     <div class="space-y-4">
                         <div>
-                            <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan" type="text"/>
+                            <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan - Nama Perusahaan" type="text"/>
                         </div>
                         <div>
                             <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">

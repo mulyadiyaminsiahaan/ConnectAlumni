@@ -77,7 +77,7 @@
                         <!-- CTA Button -->
                         <div class="grid lg:flex flex-wrap mt-4 gap-5">
                             @if(Auth::check())
-                                <span class="text-lg font-medium text-center text-[#0D63F3] italic">Bantu masyarakat dengan membuat testimonimu sendiri</span>
+                                <span class="text-lg font-medium text-center text-[#0D63F3] italic">Bantu masyarakat dengan membuat testimoni</span>
                             @else
                                 <a href="{{ route('register') }}" class="text-white text-lg font-medium text-center bg-[#0D63F3] rounded-full px-12 py-3">Sign Up</a>
                             @endif
