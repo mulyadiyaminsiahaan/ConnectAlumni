@@ -123,6 +123,7 @@
             @endif
             <div class="ml-6">
                 <h4 class="mt-4 text-lg font-medium text-[#1E2B4F]">{{ $testimoni['judul_utama'] }}</h4>
+                <p class="text-sm text-[#AFAEC3]"><em><strong>{{ $testimoni['name'] }}</strong></em></p>
                 <p class="text-sm text-[#AFAEC3]"><em>{{ $testimoni['pekerjaan'] }}</em></p>
                 <p class="text-xs text-gray-500">{{ $testimoni['program_studi'] }} {{ $testimoni['angkatan'] }}</p>
             </div>

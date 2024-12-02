@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use App\Models\User;
 
 class TestimoniController extends Controller
 {
@@ -34,14 +35,18 @@ class TestimoniController extends Controller
 
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
-        $contentArray = json_decode($content, true)['data'];
+        $testimoniData = json_decode($content, true)['data'];
 
-        // print_r($contentArray['data']);
+        // Ambil nama pengguna dari database berdasarkan user_id
+        $users = User::pluck('name', 'id'); // Ambil pasangan id => name
 
+        foreach ($testimoniData as &$testimoni) {
+            $testimoni['name'] = $users[$testimoni['user_id']] ?? 'Unknown User';
+        }
 
         return view('pages.frontsite.testimoni.index', [
-            'testimoni' => $contentArray,
-            'search' => $search, 
+            'testimoni' => $testimoniData,
+            'search' => $search, // Kirim kata kunci ke view untuk referensi
         ]);
     }
 
