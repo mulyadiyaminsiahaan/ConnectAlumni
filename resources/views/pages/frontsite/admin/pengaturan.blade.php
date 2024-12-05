@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengaturan</title>
     <style>
-         body {
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -13,7 +13,7 @@
             background-color: #f4f4f4;
         }
 
-           /* Sidebar */
+        /* Sidebar */
         .sidebar {
             height: 100vh;
             width: 250px;
@@ -23,12 +23,11 @@
             background-color: #f0f3ff;
             padding-top: 20px;
             color: #ff6f00;
-            transition: transform 0.3s ease; /* Animasi smooth untuk show/hide */
+            transition: transform 0.3s ease;
         }
 
-        /* Sidebar tersembunyi */
         .sidebar.hidden {
-            transform: translateX(-100%); /* Sidebar keluar dari layar */
+            transform: translateX(-100%);
         }
 
         .sidebar a {
@@ -44,42 +43,25 @@
             color: #f56e07;
         }
 
-    form {
-        max-width: 400px;
-        margin: 0 auto;
-    }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-    form label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-    form input,
-    form button {
-        width: 100%;
-        padding: 20px;
-        margin-bottom: 0px;
-        border-radius: 25px;
-        box-sizing: border-box; /* Ensure padding and border are included in the width and height */
-    }
-
-    form input {
-        border: 1px solid #ccc;
-    }
-
-    form button {
-        background-color: #5358e9;
-        color: white;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    form button:hover {
-        background-color: #4347d7;
-    }
-
+        form input {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
         /* Main content */
         .main-content {
@@ -87,47 +69,32 @@
             padding: 20px;
             background-color: #fff;
             min-height: 100vh;
-            transition: margin-left 0.3s ease; /* Animasi smooth saat sidebar terbuka/tutup */
+            transition: margin-left 0.3s ease;
         }
 
-        /* Ketika sidebar ditutup, konten bergerak ke kiri */
         .main-content.sidebar-hidden {
-            margin-left: 0; /* Konten kembali ke posisi awal */
+            margin-left: 0;
         }
 
         .main-content h1 {
             margin: 0;
             font-size: 24px;
         }
+
         .main-content h2 {
             font-size: 14px;
             color: gray;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 50px;
-            margin-top: 50px;
-        }
-        .header .left {
-            font-size: 14px;
-        }
-        .header .right {
-            font-size: 14px;
-            color: gray;
-        }
 
-        /* Tombol toggle sidebar */
         .toggle-btn {
-            width: 100%; /* Membuat tombol selebar sidebar */
+            width: 100%;
             font-size: 18px;
-            background-color: transparent; /* Membuat background transparan */
-            color: #0a0a0a; /* Warna teks tetap hitam untuk kontras */
-            padding: 15px; /* Menambahkan padding agar tombol lebih besar */
+            background-color: transparent;
+            color: #0a0a0a;
+            padding: 15px;
             border: none;
             cursor: pointer;
-            transition: 0.3s;
-            text-align: left; /* Agar teks berada di kiri */
+            text-align: left;
         }
 
         .sign-out {
@@ -147,13 +114,46 @@
         }
 
         .toggle-icon {
-    font-size: 24px; /* Atur ukuran ikon toggle di sini */
-}
+            font-size: 24px;
+        }
 
-.bold-text {
-    font-weight: bold; /* Membuat teks "Beranda" tebal */
-    font-size: 28px; /* Atur ukuran teks "Beranda" di sini */
-}
+        .bold-text {
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        /* Tombol Ganti Password dan Cancel */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Pisahkan tombol ke kiri dan kanan */
+            margin-top: 20px; /* Beri jarak ke atas */
+        }
+
+        form button[type="submit"]:nth-child(1) {
+            background-color: #007bff; /* Warna biru */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        form button[type="submit"]:nth-child(1):hover {
+            background-color: #0056b3;
+        }
+
+        form button[type="submit"]:nth-child(2) {
+            background-color: #dc3545; /* Warna merah */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        form button[type="submit"]:nth-child(2):hover {
+            background-color: #a71d2a;
+        }
     </style>
 </head>
 <body>
@@ -173,48 +173,46 @@
             @csrf
         </form>
     </div>
+
     <!-- Main content -->
     <div class="main-content" id="mainContent">
         <button class="toggle-btn" onclick="toggleSidebar()">
             <span class="toggle-icon">☰</span> <span class="bold-text">Pengaturan</span>
         </button>
-        <h2>ubah pengaturan profil anda</h2>
-    
-    <form style="margin-top: 75px;">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Username">
+        <h2>Ubah pengaturan profil anda</h2>
 
-        <label for="phone">Nomor Telepon</label>
-        <input type="text" id="phone" placeholder="Nomor Telepon">
+        <form style="margin-top: 75px;">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username">
 
-        <label for="new-password">Password Baru</label>
-        <input type="password" id="new-password" placeholder="Password Baru">
-            
-        <div style="text-align: center;">
-        Ubah Password Anda?
-        <button type="submit">Ganti Password</button>
-        <button type="submit">Cancel</button>
-    </form>
-</div>
+            <label for="phone">Nomor Telepon</label>
+            <input type="text" id="phone" placeholder="Nomor Telepon">
 
-</body>
-</html>
-<!-- JavaScript untuk toggle sidebar -->
-<script>
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        var mainContent = document.getElementById("mainContent");
+            <label for="new-password">Password Baru</label>
+            <input type="password" id="new-password" placeholder="Password Baru">
 
-        // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
-        sidebar.classList.toggle("hidden");
+            <!-- Tombol Ganti Password dan Cancel -->
+            <div class="button-container">
+                <button type="submit">Ganti Password</button>
+                <button type="submit">Cancel</button>
+            </div>
+        </form>
+    </div>
 
-        // Menambahkan atau menghapus kelas 'sidebar-hidden' untuk main content
-        mainContent.classList.toggle("sidebar-hidden");
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.getElementById("mainContent");
 
-        // Debugging
-        console.log('Sidebar visibility:', !sidebar.classList.contains("hidden"));
-    }
-</script>
+            // Menambahkan atau menghapus kelas 'hidden' untuk sidebar
+            sidebar.classList.toggle("hidden");
 
+            // Menambahkan atau menghapus kelas 'sidebar-hidden' untuk main content
+            mainContent.classList.toggle("sidebar-hidden");
+
+            // Debugging
+            console.log('Sidebar visibility:', !sidebar.classList.contains("hidden"));
+        }
+    </script>
 </body>
 </html>
