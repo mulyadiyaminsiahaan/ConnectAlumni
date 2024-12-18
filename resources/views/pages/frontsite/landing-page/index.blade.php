@@ -93,35 +93,35 @@
         <!-- Popular Categories -->
         <section class="mt-32" style="background-color: rgba(82, 95, 225, 0.1);">
             <div class="mx-auto max-w-7xl px-4 lg:px-14 py-16">
-                <h3 class="text-2xl font-semibold">Popular Categories</h3>
-                <p class="text-[#A7B0B5] mt-2">Quick way to get your first experience</p>
+                <h3 class="text-2xl font-semibold">Kategori Populer</h3>
+                <p class="text-[#A7B0B5] mt-2">Cara cepat untuk mendapatkan pengalaman pertama Anda</p>
         
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-10">
                     <!-- Cards without database data -->
                     <a href="{{ route('category.index', ['search' => 'System Analyst']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                        <h5 class="text-[#1E2B4F] text-lg font-semibold">System Analyst</h5>
-                        <p class="text-[#AFAEC3] mt-1">143 alumni</p>
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Sistem Analis</h5>
+                        <p class="text-[#AFAEC3] mt-1">{{ $Kategori1 }} alumni</p>
                     </a>
         
                     <a href="{{ route('category.index', ['search' => 'Programmer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">Programmer</h5>
-                        <p class="text-[#AFAEC3] mt-1">50 alumni</p>
+                        <p class="text-[#AFAEC3] mt-1">{{ $Kategori2 }} alumni</p>
                     </a>
 
                     {{-- add more cards without database --}}
                     <a href="{{ route('category.index', ['search' => 'UI/UX Designer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
                         <h5 class="text-[#1E2B4F] text-lg font-semibold">UI/UX Designer</h5>
-                        <p class="text-[#AFAEC3] mt-1">100 alumni</p>
+                        <p class="text-[#AFAEC3] mt-1">{{ $Kategori3 }} alumni</p>
                     </a>
 
                     <a href="{{ route('category.index', ['search' => 'Data Analyst']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Data Analyst</h5>
-                        <p class="text-[#AFAEC3] mt-1">80 alumni</p>
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Data Analis</h5>
+                        <p class="text-[#AFAEC3] mt-1">{{ $Kategori4 }} alumni</p>
                     </a>
 
                     <a href="{{ route('category.index', ['search' => 'Network Engineer']) }}" class="bg-white py-6 px-5 rounded-2xl transition hover:ring-offset-2 hover:ring-2 hover:ring-[#0D63F3]">
-                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Network Engineer</h5>
-                        <p class="text-[#AFAEC3] mt-1">120 alumni</p>
+                        <h5 class="text-[#1E2B4F] text-lg font-semibold">Network Engginer</h5>
+                        <p class="text-[#AFAEC3] mt-1">{{ $Kategori5 }} alumni</p>
                     </a>
         
                     <!-- Add more static categories as needed -->
@@ -134,8 +134,8 @@
         <!-- Best Alumnis -->
         <section class="mt-4 lg:mt-16">
             <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
-                <h3 class="text-[#1E2B4F] text-2xl font-semibold">Best IT Expert</h3>
-                <p class="text-[#A7B0B5] mt-2">Help your plan much better</p>
+                <h3 class="text-[#1E2B4F] text-2xl font-semibold">Ahli IT Terbaik</h3>
+                <p class="text-[#A7B0B5] mt-2">Bantu rencanamu menjadi lebih baik</p>
 
                 <!-- Alumni Cards -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
@@ -171,8 +171,8 @@
         <!-- Social Media -->
         <section class="mt-4 lg:mt-16" style="background-color: rgba(255, 164, 27, 0.35);">
             <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
-                <h3 class="text-[#1E2B4F] text-2xl font-semibold">Follow Us on Social Media</h3>
-                <p class="text-[#A7B0B5] mt-2">Stay connected with us</p>
+                <h3 class="text-[#1E2B4F] text-2xl font-semibold">Ikuti Kami di Media Sosial</h3>
+                <p class="text-[#A7B0B5] mt-2">Tetap terhubung dengan kami</p>
         
                 <div class="flex justify-center mt-10">
                     <!-- Menambahkan gambar di tengah -->

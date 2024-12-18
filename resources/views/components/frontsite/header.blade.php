@@ -24,7 +24,7 @@
                     after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold 
                     inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }} "
                 >
-                    Home
+                    Beranda
                 </a>
                 <a
                     href="{{ route('testimoni.index') }}"
@@ -36,13 +36,13 @@
                     href="{{ route('category.index') }}"
                     class="text-[#1E2B4F] relative {{ request()->is('category') ? "after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }}"
                 >
-                    Category
+                    Kategori
                 </a>
                 <a
                     href="{{ route('campus.index') }}"
                     class="text-[#1E2B4F] relative {{ request()->is('campus') ? "after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg" : "hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium" }}"
                 >
-                    Campus
+                    Kampus
                 </a>
                 </div>
 
@@ -262,7 +262,7 @@
             <a
             href="{{ route('index') }}"
             class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
-            >Home</a
+            >Beranda</a
             >
             <a
             href="{{ route('testimoni.index') }}"
@@ -272,12 +272,12 @@
             <a
             href="{{ route('category.index') }}"
             class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            >Category</a
+            >Kategori</a
             >
             <a
             href="{{ route('campus.index') }}"
             class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            >Campus</a
+            >Kampus</a
             >
         </div>
 

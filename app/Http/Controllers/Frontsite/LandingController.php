@@ -14,50 +14,25 @@ class LandingController extends Controller
     public function index(Request $request)
     {
 
+        $Kategori1 = User::where('job', 'System Analyst')->whereNotNull('photo')->count();
+        $Kategori2 = User::where('job', 'Programmer')->whereNotNull('photo')->count();
+        $Kategori3 = User::where('job', 'UI/UX Designer')->whereNotNull('photo')->count();
+        $Kategori4 = User::where('job', 'Data Analyst')->whereNotNull('photo')->count();
+        $Kategori5 = User::where('job', 'Network Engineer')->whereNotNull('photo')->count();
         if (Auth::check()) {
             $user = Auth::user();
 
             if ($user->usertype == 'admin') {
                 return redirect('/admin');
             } else {
-                // Arahkan pengguna yang tidak login ke halaman login
-                // Mendapatkan filter dari request
-                $filter = $request->input('filter', ''); // Default filter kosong
-            
-                // Query untuk mengambil data alumni
-                if ($filter == 'popular') {
-                    // Mengambil berdasarkan jumlah alumni yang paling banyak (misalnya berdasarkan 'alumni_count')
-                    $users = User::orderBy('alumni_count', 'desc')->get();
-                } elseif ($filter == 'recent') {
-                    // Mengambil berdasarkan data terbaru
-                    $users = User::orderBy('created_at', 'desc')->get();
-                } else {
-                    // Mengambil semua data alumni jika filter kosong
-                    $users = User::all(); // Get all users, not just the authenticated user
-                }
-            
-                // Mengirimkan data users ke view
-                return view('pages.frontsite.landing-page.index', compact('users'));
+                $users = User::all(); // Get all users, not just the authenticated user
+                return view('pages.frontsite.landing-page.index', compact('users', 'Kategori1', 'Kategori2', 'Kategori3', 'Kategori4', 'Kategori5')); // Pass 'users' instead of 'user'
             }
         } else {
-            // Arahkan pengguna yang tidak login ke halaman login
-            // Mendapatkan filter dari request
-            $filter = $request->input('filter', ''); // Default filter kosong
-        
-            // Query untuk mengambil data alumni
-            if ($filter == 'popular') {
-                // Mengambil berdasarkan jumlah alumni yang paling banyak (misalnya berdasarkan 'alumni_count')
-                $users = User::orderBy('alumni_count', 'desc')->get();
-            } elseif ($filter == 'recent') {
-                // Mengambil berdasarkan data terbaru
-                $users = User::orderBy('created_at', 'desc')->get();
-            } else {
-                // Mengambil semua data alumni jika filter kosong
-                $users = User::all(); // Get all users, not just the authenticated user
-            }
+            $users = User::all(); // Get all users, not just the authenticated user            
         
             // Mengirimkan data users ke view
-            return view('pages.frontsite.landing-page.index', compact('users')); // Pass 'users' instead of 'user'
+            return view('pages.frontsite.landing-page.index', compact('users', 'Kategori1', 'Kategori2', 'Kategori3', 'Kategori4', 'Kategori5')); // Pass 'users' instead of 'user'
         }
 
 
