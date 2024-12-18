@@ -1,0 +1,140 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class UserSeeder extends Seeder
+{
+    public function run()
+    {
+        $data = [
+            [
+                'name' => 'Lena',
+                'email' => 'lena@gmail.com',
+                'usertype' => 'user',
+                'password' => bcrypt('password123'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'User aktif di bidang pengembangan teknologi.',
+                'contact' => '6281234567890',
+                'job' => 'System Analyst',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1990-01-01',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' => 'Jane Doe',
+                'email' => 'jane.doe@example.com',
+                'usertype' => 'admin',
+                'password' => bcrypt('securepassword'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'Administrator dengan pengalaman 5 tahun.',
+                'contact' => '6281987654321',
+                'job' => 'Administrator',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1985-05-15',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'John Smith',
+                'email' => 'john.smith@example.com',
+                'usertype' => 'user',
+                'password' => bcrypt('johnpassword'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'Alumni Teknik Informatika yang berkarir sebagai Full Stack Developer.',
+                'contact' => '6281234561234',
+                'job' => 'Full Stack Developer',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1992-03-10',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Lisa Brown',
+                'email' => 'lisa.brown@example.com',
+                'usertype' => 'user',
+                'password' => bcrypt('lisapassword'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'Alumni Sistem Informasi yang aktif dalam pengembangan data.',
+                'contact' => '6281212341234',
+                'job' => 'Data Analyst',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1991-06-15',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Michael White',
+                'email' => 'michael.white@example.com',
+                'usertype' => 'user',
+                'password' => bcrypt('michaelpassword'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'Dosen dan praktisi di bidang Artificial Intelligence.',
+                'contact' => '6281112341234',
+                'job' => 'Lecturer',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1988-09-25',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Sarah Johnson',
+                'email' => 'sarah.johnson@example.com',
+                'usertype' => 'user',
+                'password' => bcrypt('sarahpassword'),
+                'two_factor_secret' => null,
+                'two_factor_recovery_codes' => null,
+                'two_factor_confirmed_at' => null,
+                'about' => 'Pakar UI/UX dengan pengalaman dalam proyek startup.',
+                'contact' => '6281987651234',
+                'job' => 'UI/UX Designer',
+                'photo' => null,
+                'status' => 'active',
+                'birth_of_date' => '1994-12-05',
+                'remember_token' => null,
+                'current_team_id' => null,
+                'profile_photo_path' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ];
+
+        foreach ($data as $item) {
+            DB::table('users')->insert($item);
+        }
+    }
+}

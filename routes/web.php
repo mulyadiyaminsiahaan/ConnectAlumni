@@ -86,6 +86,6 @@ Route::get('/profil/edit', [ProfilController::class, 'edit'])->name('editprofil'
 // Route to handle form submission and update profile
 Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update')->middleware('auth');
 
-Route::get('/landing-page', function () {
-    return view('pages.frontsite.landing-page.index');
-})->middleware('auth')->name('landing-page');
+// Route::get('/landing-page', function () {
+//     return view('pages.frontsite.landing-page.index');
+// })->middleware('auth')->name('landing-page');
