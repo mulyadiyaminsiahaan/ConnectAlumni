@@ -75,7 +75,7 @@
                                     Sign In
                                 </button>
                                 <a href="{{ route('register') }}" class="text-center text-lg text-[#1E2B4F] font-medium bg-[#F2F6FE] px-10 py-4 rounded-full">
-                                    Register
+                                    Sign Up
                                 </a>
                             </div>
                         </form>

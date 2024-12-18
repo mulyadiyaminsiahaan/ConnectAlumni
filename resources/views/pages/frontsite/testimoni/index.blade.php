@@ -215,7 +215,7 @@
         </div>
       @else
         <div id="loginNotification" class="fixed top-4 right-4 bg-yellow-500 text-white p-4 rounded-lg hidden">
-            Silakan login terlebih dahulu untuk menambahkan testimoni.
+            Silahkan login terlebih dahulu untuk menambahkan testimoni.
         </div>
         @endauth
 

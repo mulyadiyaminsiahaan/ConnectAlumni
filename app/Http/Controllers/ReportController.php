@@ -65,7 +65,7 @@ class ReportController extends Controller
         if ($response->successful()) {
             return redirect()->back()->with('success', 'Laporan berhasil dikirim!');
         } else {
-            return redirect()->back()->with('error', 'Gagal mengirim laporan. Silakan coba lagi.');
+            return redirect()->back()->with('error', 'Gagal mengirim laporan. Silahkan coba lagi.');
         }
     }
 

@@ -15,6 +15,11 @@ use App\Http\Controllers\ConnectedController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\SystemController;
+use App\Http\Controllers\System2Controller;
+use App\Http\Controllers\System3Controller;
+use App\Http\Controllers\System4Controller;
+use App\Http\Controllers\System5Controller;
 
 Route::prefix('auth')->group(function () {
     Route::get("/register", [AuthController::class, "getRegister"])->name("register");
@@ -29,6 +34,21 @@ Route::get('/', [LandingController::class, 'index'])->name('index');
 
 // Mengarahkan '/category' ke metode index dari CategoryController
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+
+// Mengarahkan '/category/system' ke metode index dari SystemController
+Route::get('/category/system', [SystemController::class, 'index'])->name('category.system');
+
+// Mengarahkan '/category/system2' ke metode index dari System2Controller
+Route::get('/category/system2', [System2Controller::class, 'index'])->name('category.system2');
+
+// Mengarahkan '/category/system3' ke metode index dari System3Controller
+Route::get('/category/system3', [System3Controller::class, 'index'])->name('category.system3');
+
+// Mengarahkan '/category/system4' ke metode index dari System4Controller
+Route::get('/category/system4', [System4Controller::class, 'index'])->name('category.system4');
+
+// Mengarahkan '/category/system5' ke metode index dari System5Controller
+Route::get('/category/system5', [System5Controller::class, 'index'])->name('category.system5');
 
 // Route untuk menampilkan alumni
 Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
