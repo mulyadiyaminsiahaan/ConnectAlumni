@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="mx-auto max-w-7xl px-4 lg:px-14 py-14">
-            <h1 class="text-[#1E2B4F] text-4xl font-semibold">Analis Data</h1>
+            <h1 class="text-[#1E2B4F] text-4xl font-semibold">Data Analis</h1>
 
                 <!-- Alumni Cards -->
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
@@ -93,7 +93,7 @@
                                     <!-- Name and Job Section -->
                                     <div class="p-6 mt-5 mb-5">
                                         <div class="text-black text-lg font-semibold pl-4">{{ $user['name'] }}</div>
-                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user['job'] }}</div>
+                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user['job'] }} at {{$user['tempatKerja']}}</div>
                                         <div class="text-[#AFAEC3] mt-1 pl-4">{{" "}}</div>
                                     </div>
                                 </div>
