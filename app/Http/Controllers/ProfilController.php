@@ -78,14 +78,14 @@ class ProfilController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'contact' => 'required|string|max:255',
-            'job' => 'nullable|string|max:255',
-            'about' => 'nullable|string|max:1000',
-            'status' => 'nullable|string|max:255',
-            'birth_of_date' => 'nullable|date',
+            'job' => 'required|string|max:255',
+            'about' => 'required|string|max:1000',
+            'status' => 'required|string|max:255',
+            'birth_of_date' => 'required|date',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'program_studi' => 'nullable|string|max:255',
-            'angkatan' => 'nullable|string|max:255',
-            'tempatKerja' => 'nullable|string|max:255',
+            'program_studi' => 'required|string|max:255',
+            'angkatan' => 'required|string|max:255',
+            'tempatKerja' => 'required|string|max:255',
         ]);
         
 

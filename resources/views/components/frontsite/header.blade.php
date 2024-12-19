@@ -167,7 +167,7 @@
                                 role="menuitem"
                                 tabindex="-1"
                                 id="user-menu-item-1"
-                                >Dashboard</a
+                                >Beranda</a
                             >
                             <a
                                 href="{{ route('profil') }}"
@@ -175,7 +175,7 @@
                                 role="menuitem"
                                 tabindex="-1"
                                 id="user-menu-item-0"
-                                >Your Profile</a
+                                >Profil Anda</a
                             >
                             <a
                                 href="{{ route('logout') }}"
