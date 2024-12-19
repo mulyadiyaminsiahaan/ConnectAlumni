@@ -33,13 +33,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'type',
-        'about',
+        'job',
         'contact',
-        'job', 
-        'photo', 
         'status',
+        'about',
         'birth_of_date',
+        'photo',
+        'program_studi', 
+        'angkatan', 
+        'tempatKerja'
     ];
 
     protected $dates = [

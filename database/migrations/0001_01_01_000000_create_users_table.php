@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('status')->nullable();
             $table->date('birth_of_date')->nullable();
+            $table->string('program_studi')->nullable();
+            $table->string('angkatan')->nullable();
+            $table->string('tempatKerja')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

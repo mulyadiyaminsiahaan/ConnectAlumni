@@ -82,8 +82,12 @@ class ProfilController extends Controller
             'about' => 'nullable|string|max:1000',
             'status' => 'nullable|string|max:255',
             'birth_of_date' => 'nullable|date',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // for profile photo
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'program_studi' => 'nullable|string|max:255',
+            'angkatan' => 'nullable|string|max:255',
+            'tempatKerja' => 'nullable|string|max:255',
         ]);
+        
 
         // Ensure $user is an instance of User and can be updated
         if ($user instanceof \App\Models\User) {
@@ -95,6 +99,10 @@ class ProfilController extends Controller
             $user->about = $validated['about'] ?? $user->about;
             $user->status = $validated['status'] ?? $user->status;
             $user->birth_of_date = $validated['birth_of_date'] ?? $user->birth_of_date;
+            $user->program_studi = $validated['program_studi'] ?? $user->program_studi;
+            $user->angkatan = $validated['angkatan'] ?? $user->angkatan;
+            $user->tempatKerja = $validated['tempatKerja'] ?? $user->tempatKerja;
+            
 
             // Handle file upload (if there is a new photo)
             if ($request->hasFile('photo')) {

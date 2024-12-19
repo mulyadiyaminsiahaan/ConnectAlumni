@@ -58,6 +58,9 @@ class UserController extends Controller
             'photo' => 'required|string',
             'status' => 'required|string',
             'birth_of_date' => 'required|date',
+            'program_studi' => 'required|string',
+            'angkatan' => 'required|string',
+            'tempatKerja' => 'required|string',
 
         ]);
 
@@ -96,6 +99,9 @@ class UserController extends Controller
             'photo' => 'string',
             'status' => 'string',
             'birth_of_date' => 'date',
+            'program_studi' => 'string',
+            'angkatan' => 'string',
+            'tempatKerja' => 'string',
 
         ]);
 
