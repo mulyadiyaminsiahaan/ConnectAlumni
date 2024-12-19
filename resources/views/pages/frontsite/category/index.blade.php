@@ -94,7 +94,7 @@
                                     <!-- Name and Job Section -->
                                     <div class="p-6 mt-5 mb-5">
                                         <div class="text-black text-lg font-semibold pl-4">{{ $user['name'] }}</div>
-                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user['job'] }}</div>
+                                        <div class="text-[#AFAEC3] mt-1 pl-4">{{ $user['job'] }} at {{$user['tempatKerja']}}</div>
                                         <div class="text-[#AFAEC3] mt-1 pl-4">{{" "}}</div>
                                     </div>
                                 </div>
