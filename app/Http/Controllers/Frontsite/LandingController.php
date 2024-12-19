@@ -14,11 +14,11 @@ class LandingController extends Controller
     public function index(Request $request)
     {
 
-        $Kategori1 = User::where('job', 'System Analyst')->whereNotNull('photo')->count();
+        $Kategori1 = User::where('job', 'Sistem Analis')->whereNotNull('photo')->count();
         $Kategori2 = User::where('job', 'Programmer')->whereNotNull('photo')->count();
-        $Kategori3 = User::where('job', 'UI/UX Designer')->whereNotNull('photo')->count();
-        $Kategori4 = User::where('job', 'Data Analyst')->whereNotNull('photo')->count();
-        $Kategori5 = User::where('job', 'Network Engineer')->whereNotNull('photo')->count();
+        $Kategori3 = User::where('job', 'Perancang UI/UX')->whereNotNull('photo')->count();
+        $Kategori4 = User::where('job', 'Data Analis')->whereNotNull('photo')->count();
+        $Kategori5 = User::where('job', 'Teknisi Jaringan')->whereNotNull('photo')->count();
         if (Auth::check()) {
             $user = Auth::user();
 
