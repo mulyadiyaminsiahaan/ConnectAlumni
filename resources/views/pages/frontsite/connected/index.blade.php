@@ -34,7 +34,7 @@
                         </div>
                         <div>
                             <p class="text-gray-500">Pekerjaan</p>
-                            <p class="text-gray-800 font-semibold">{{ $user->job }}</p>
+                            <p class="text-gray-800 font-semibold">{{ $user->job }} at {{$user->tempatKerja}}</p>
                         </div>
                         <div>
                             <p class="text-gray-500">Nomor Telepon</p>

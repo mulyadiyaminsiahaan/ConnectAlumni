@@ -121,12 +121,14 @@
             @else
                 <p class="text-red-500">Link video tidak valid atau belum didukung.</p>
             @endif
-            <div class="ml-6">
+            <a href="{{ route('connected.index', ['userId' => $testimoni['user_id']])}}" class="ml-6">
+            <div>
                 <h4 class="mt-4 text-lg font-medium text-[#1E2B4F]">{{ $testimoni['judul_utama'] }}</h4>
                 <p class="text-sm text-[#AFAEC3]"><em><strong>{{ $testimoni['name'] }}</strong></em></p>
                 <p class="text-sm text-[#AFAEC3]"><em>{{ $testimoni['pekerjaan'] }}</em></p>
                 <p class="text-xs text-gray-500">{{ $testimoni['program_studi'] }} {{ $testimoni['angkatan'] }}</p>
             </div>
+            </a>
             <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-red-500" title="Report" onclick="handleReportClick(event)">
                 <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
@@ -144,7 +146,7 @@
                     <input type="hidden" name="testimoni_id" id="reportTestimoniId">
                     <div class="space-y-4">
                         <div>
-                            <input name="judul_utama" id="reportJudulUtama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Judul Utama" type="text"/>
+                            <input name="judul_utama" id="reportJudulUtama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Judul" type="text"/>
                         </div>
                         <div>
                             <input name="nama" id="reportNama" class="w-full p-4 border rounded-lg bg-gray-100" placeholder="Nama" type="text" />
@@ -175,10 +177,19 @@
                     @csrf
                     <div class="space-y-4">
                         <div>
-                            <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan - Nama Perusahaan" type="text"/>
+                            <!-- <input name="pekerjaan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Pekerjaan - Nama Perusahaan" type="text"/> -->
+                            <label for="Pekerjaan - Nama Perusahaan" class="block text-gray-700">Pekerjaan - Nama Perusahaan</label>
+                            <input 
+                                name="pekerjaan" 
+                                class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" 
+                                value="{{ Auth::user()->job }} at {{ Auth::user()->tempatKerja }}" 
+                                placeholder="Pekerjaan - Nama Perusahaan" 
+                                type="text"
+                                readonly
+                            />
                         </div>
                         <div>
-                            <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
+                            <!-- <select name="program_studi" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
                                 <option value="" disabled selected>Program Studi</option>
                                 <option value="Sistem Informasi">S1 Sistem Informasi</option>
                                 <option value="Informatika">S1 Informatika</option>
@@ -189,33 +200,72 @@
                                 <option value="D3 Teknologi Informasi">D3 Teknologi Informasi</option>
                                 <option value="D3 Teknik Elektro">D3 Teknik Elektro</option>
                                 <option value="D4 Rekayasa Perangkat Lunak">D4 Rekayasa Perangkat Lunak</option>
-                            </select>
+                            </select> -->
+                            <label for="program_studi" class="block text-gray-700">Program Studi</label>
+                            <input  name="program_studi" type="text" 
+                            class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" 
+                            value="{{ Auth::user()->program_studi ?? 'Program Studi' }}" 
+                            readonly />
                         </div>
                         <div>
-                            <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
+                            <!-- <select name="angkatan" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700">
                                 <option value="" disabled selected>Angkatan</option>
                                 @for ($year = 2000; $year <= date('Y'); $year++)
                                     <option value="{{ $year }}">{{ $year }}</option>
                                 @endfor
-                            </select>
+                            </select> -->
+                            <label for="angkatan" class="block text-gray-700">Angkatan</label>
+                            <input name="angkatan" type="text" 
+                                class="w-full p-4 border rounded-full bg-gray-100 text-gray-700" 
+                                value="{{ Auth::user()->angkatan ?? 'Angkatan' }}" 
+                                readonly />
+                        </div>
+                        <!-- <div>
+                        <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700"
+                            value=" {{ Auth::user()->job }} at {{ Auth::user()->tempatKerja }}" type="text"
+                        />
                         </div>
                         <div>
-                            <input name="judul_utama" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul Utama" type="text"/>
+                        <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700"
+                           value=" {{ Auth::user()->program_studi ?? 'Program Studi' }}" type="text"
+                        />
                         </div>
                         <div>
+                        <input class="w-full p-4 border rounded-full bg-gray-100 text-gray-700"
+                            value=" {{ Auth::user()->angkatan ?? 'Angkatan' }}"
+                        /> -->
+
+                        <div>
+                        <label for="judul_utama" class="block text-gray-700">Judul</label>
+                            <input name="judul_utama" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Judul" type="text"/>
+                        </div>
+                        <div>
+                        <label for="link_video" class="block text-gray-700">Link Video</label>
                             <input name="link_video" class="w-full p-4 border rounded-full bg-gray-100 text-gray-700 placeholder-gray-500" placeholder="Link Video" type="text"/>
                         </div>
                     </div>
                     <div class="mt-6 flex justify-end space-x-4">
                         <button class="bg-gray-500 text-white px-6 py-2 rounded-full" type="button" onclick="toggleTestimoniForm()">Cancel</button>
-                        <button class="bg-blue-500 text-white px-6 py-2 rounded-full" type="submit">Upload</button>
+                        <button id="addTestimoni" class="bg-blue-500 text-white px-6 py-2 rounded-full" 
+                        onclick="checkLoginStatus()">
+                    Tambah Testimoni
+                </button>
+                <script>
+                    function checkLoginStatus() {
+                        const isLoggedIn = {{ Auth::check() ? 'true' : 'false' }};
+                        if (!isLoggedIn) {
+                            window.location.href = '/login'; // Redirect jika tidak login
+                        } else {
+                            toggleTestimoniForm(); // Tampilkan form jika login
+                        }
+                    }
+                </script>
                     </div>
                 </form>
             </div>
         </div>
       @else
-        <div id="loginNotification" class="fixed top-4 right-4 bg-yellow-500 text-white p-4 rounded-lg hidden">
-            Silahkan login terlebih dahulu untuk menambahkan testimoni.
+        <div id="loginNotification">
         </div>
         @endauth
 
@@ -249,6 +299,7 @@
                 @auth
                 toggleTestimoniForm();
                 @else
+                window.location.href = '{{ route("login") }}';
                 const loginNotification = document.getElementById('loginNotification');
                 loginNotification.classList.remove('hidden');
                 setTimeout(() => {

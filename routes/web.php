@@ -100,6 +100,9 @@ Route::get('/connected/{userId}', [ConnectedController::class, 'showcard'])->nam
 // Mengarahkan '/landing-page/profil' ke metode index dari ProfilController
 // Mengarahkan '/profil' ke metode show dari ProfilController
 // routes/web.php
+Route::get('/user/{userId}', [ConnectedController::class, 'showcard'])->name('connected.index');
+
+
 Route::get('/profil', [ProfilController::class, 'show'])->name('profil')->middleware('auth');
 
 Route::get('/profil/edit', [ProfilController::class, 'edit'])->name('editprofil')->middleware('auth');
