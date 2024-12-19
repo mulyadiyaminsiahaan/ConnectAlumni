@@ -21,7 +21,7 @@
 
                 <div class="w-2/3 bg-white p-8 rounded-lg shadow-lg">
                     <h2 class="text-gray-500 text-lg">Profile</h2>
-                    <h1 class="text-4xl font-bold text-gray-800 mt-2">About Me</h1>
+                    <h1 class="text-4xl font-bold text-gray-800 mt-2">Tentang Saya</h1>
                     <div class="text-gray-700 mt-4 text-justify">
                         <p>
                             {{ $user->about }} <!-- Menampilkan tentang user -->
@@ -29,19 +29,19 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mt-8">
                         <div>
-                            <p class="text-gray-500">Full Name</p>
+                            <p class="text-gray-500">Nama</p>
                             <p class="text-gray-800 font-semibold">{{ $user->name }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Job</p>
+                            <p class="text-gray-500">Pekerjaan</p>
                             <p class="text-gray-800 font-semibold">{{ $user->job }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Phone</p>
+                            <p class="text-gray-500">Nomor Telepon</p>
                             <p class="text-gray-800 font-semibold">{{ $user->contact }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Birth date</p>
+                            <p class="text-gray-500">Tanggal Lahir</p>
                             <p class="text-gray-800 font-semibold">{{ \Carbon\Carbon::parse($user->birth_of_date)->format('d - m - Y') }}</p>
                         </div>
                         <div>
@@ -52,6 +52,14 @@
                             <p class="text-gray-500">Status</p>
                             <p class="text-gray-800 font-semibold">{{ $user->status }}</p>
                         </div>
+                        <div>
+                    <p class="text-gray-500">Program Studi</p>
+                    <p class="text-gray-800 font-semibold">{{ $user->program_studi }}</p>
+                </div>
+                <div>
+                    <p class="text-gray-500">Angkatan</p>
+                    <p class="text-gray-800 font-semibold">{{ $user->angkatan }}</p>
+                </div> 
                     <div class="flex justify-end mt-8">
                         <a href="https://www.instagram.com/iadelofc/profilecard/?igsh=bHNoMDQ1eHlrODJz" class="ml-4">
                             <img src="{{ asset('/assets/frontsite/images/instagram.svg') }}" alt="Instagram" class="w-8 h-8">
